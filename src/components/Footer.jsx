@@ -1,43 +1,71 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaArrowUp } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
 import whiteLogo from "../assets/whiteLogo.svg";
 
 function Footer() {
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
   const year = new Date().getFullYear();
+
   return (
     <footer className="w-full flex items-center justify-center h-full bg-black">
-      <div className="w-[90%] h-40 flex flex-col justify-center gap-2">
-        <img src={whiteLogo} alt="White logo" className="flex self-start" />
-        <div className="flex flex-col justify-center gap-4 items-center">
-          <nav className="flex gap-6" aria-label="Social-links">
-            <a
-              href="https://github.com/Aikaykalu17"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {" "}
-              <FaGithub size={20} color="#fff" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/ikechukwu-kalu-amogu/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin size={20} color="#fff" />
-            </a>
-            <a
-              href="mailto:ikegod4luv@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <SiGmail size={20} color="#fff" />
-            </a>
-          </nav>
-          <p className="text-neutral-400  text-xs">
-            © <span>{year}</span> Ikechukwu Kalu Amogu. <br />
-            All rights reserved.
+      <div className="w-[90%] h-40 flex flex-col justify-center gap-4 lg:flex-row lg:justify-between">
+        <div className="flex flex-col justify-center items-center">
+          <img src={whiteLogo} alt="White logo" className="flex self-start" />
+          <p className="hidden lg:block text-neutral-400 text-xs">
+            Frontend Developer crafting clean, <br /> responsive, user-friendly
+            websites and web applications.{" "}
           </p>
+        </div>
+
+        <nav
+          className="flex gap-6 lg:flex-col self-center"
+          aria-label="Social-links"
+        >
+          <a
+            href="https://github.com/Aikaykalu17"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white flex items-center font-medium text-xs gap-4"
+          >
+            {" "}
+            <FaGithub size={20} color="#fff" />{" "}
+            <span className="hidden sm:inline">GitHub</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ikechukwu-kalu-amogu/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white flex items-center font-medium text-xs gap-4"
+          >
+            <FaLinkedin size={20} color="#fff" />{" "}
+            <span className="hidden sm:inline">LinkedIn</span>
+          </a>
+          <a
+            href="mailto:ikegod4luv@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white flex items-center font-medium text-xs gap-4"
+          >
+            <SiGmail size={20} color="#fff" />{" "}
+            <span className="hidden sm:inline">Email</span>
+          </a>
+        </nav>
+
+        <div className="flex gap-12 justify-center items-center ">
+          <div>
+            <p className="text-neutral-400  text-xs">
+              © <span>{year}</span> Ikechukwu Kalu Amogu. <br />
+              All rights reserved.
+            </p>
+          </div>
+          <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center self-center">
+            <button>
+              <FaArrowUp color="#fff" size={15} onClick={scrollToTop} />
+            </button>
+          </div>
         </div>
       </div>
     </footer>

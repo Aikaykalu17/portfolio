@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import darkLogo from "../assets/darkLogo.svg";
 import whiteLogo from "../assets/whiteLogo.svg";
 
 import "../components/Navstyle.css";
 import Hamburger from "./Hamburger";
+import { FaWhatsapp } from "react-icons/fa";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -13,8 +15,11 @@ function Navbar() {
     setOpen((open) => !open);
   }
 
+  const phone = "2348101375140";
+  const message = "Hi! I saw your portfolio and would like to chat.";
+
   return (
-    <nav className="relative z-20 flex h-12 w-[90%] items-center justify-between">
+    <nav className="relative z-20 flex h-12  w-[90%] items-center justify-between  ">
       <div className="flex items-center">
         <img
           src={open ? whiteLogo : darkLogo}
@@ -25,28 +30,49 @@ function Navbar() {
 
       <ul className="hidden lg:block">
         <li className="flex items-center justify-center gap-8">
-          <a href="#about" className="text-sm">
+          <Link
+            to="/about"
+            className="text-sm hover:border-y-2 hover:border-black py-2"
+          >
             About
-          </a>
-          <a href="#techstack" className="text-sm">
+          </Link>
+          <Link
+            to="/techstack"
+            className="text-sm hover:border-y-2 hover:border-black py-2"
+          >
             Tech Stack
-          </a>
-          <a href="#projects" className="text-sm">
+          </Link>
+          <Link
+            to="/projects"
+            className="text-sm hover:border-y-2 hover:border-black py-2"
+          >
             Projects
-          </a>
-          <a href="#experience" className="text-sm">
+          </Link>
+          <Link
+            to="/experience"
+            className="text-sm hover:border-y-2 hover:border-black py-2"
+          >
             Experience
-          </a>
-          <a href="#contact" className="text-sm">
+          </Link>
+          <Link
+            to="/contact"
+            className="text-sm hover:border-y-2 hover:border-black py-2"
+          >
             Contact
-          </a>
+          </Link>
         </li>
       </ul>
 
       <div className="flex text-center lg:flex items-center justify-center">
-        <button className="h-10 w-36 text-white text-center bg-black text-xs hidden lg:flex items-center justify-center hover:bg-white hover:text-black lg:hover:border lg:hover:border-black transition-colors duration-300">
-          Let's Talk
-        </button>
+        <a
+          href={`https://wa.me/${phone}?text=${encodeURIComponent(message)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="h-10 w-36 text-white text-center bg-black text-xs hidden lg:flex items-center justify-center gap-2 hover:bg-white hover:text-black lg:hover:border lg:hover:border-black transition-colors duration-300">
+            Let's Talk <FaWhatsapp size={15} />
+          </button>
+        </a>
       </div>
 
       <div className="lg:hidden">

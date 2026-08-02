@@ -3,10 +3,16 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
 function Hamburger() {
+  function handleClick(e) {
+    e.stopPropagation();
+  }
   const year = new Date().getFullYear();
 
   return (
-    <div className="mt-4 pt-8 border-t border-slate-600 flex flex-col justify-between gap-4">
+    <div
+      onClick={handleClick}
+      className="mt-4 pt-8 border-t border-slate-600 flex flex-col justify-between gap-4"
+    >
       <nav
         aria-label="Social-links"
         className="flex flex-col items-start w-[90%] mx-auto justify-between h-52 "
