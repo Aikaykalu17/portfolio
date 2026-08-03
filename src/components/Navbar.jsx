@@ -31,6 +31,14 @@ function Navbar() {
       <ul className="hidden lg:block">
         <li className="flex items-center justify-center gap-8">
           <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `text-sm py-2 ${isActive ? "border-y-2 border-black" : "hover:border-y-2 hover:border-black"}`
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
             to="/about"
             className={({ isActive }) =>
               `text-sm py-2 ${isActive ? "border-y-2 border-black" : "hover:border-y-2 hover:border-black"}`

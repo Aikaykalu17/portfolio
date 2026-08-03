@@ -13,7 +13,7 @@ import {
   HiOutlineBolt,
 } from "react-icons/hi2";
 
-import portrait2 from "../assets/portrait2.png";
+import portrait2 from "../assets/portrait2.webp";
 
 function About() {
   return (

@@ -10,7 +10,7 @@ function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full flex items-center justify-center h-full bg-black">
+    <footer className="w-full flex items-center justify-center h-40 bg-black">
       <div className="w-[90%] h-40 flex flex-col justify-center gap-4 lg:flex-row lg:justify-between">
         <div className="flex flex-col justify-center items-center">
           <img src={whiteLogo} alt="White logo" className="flex self-start" />
@@ -61,10 +61,12 @@ function Footer() {
               All rights reserved.
             </p>
           </div>
-          <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center self-center">
-            <button>
-              <FaArrowUp color="#fff" size={15} onClick={scrollToTop} />
-            </button>
+          <div
+            className="w-8 h-8 border border-white rounded-full flex items-center justify-center self-center"
+            onClick={scrollToTop}
+            role="button"
+          >
+            <FaArrowUp color="#fff" size={15} />
           </div>
         </div>
       </div>
