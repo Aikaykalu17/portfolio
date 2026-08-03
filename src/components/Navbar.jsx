@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import darkLogo from "../assets/darkLogo.svg";
 import whiteLogo from "../assets/whiteLogo.svg";
@@ -30,36 +30,39 @@ function Navbar() {
 
       <ul className="hidden lg:block">
         <li className="flex items-center justify-center gap-8">
-          <Link
+          <NavLink
             to="/about"
-            className="text-sm hover:border-y-2 hover:border-black py-2"
+            className={({ isActive }) =>
+              `text-sm py-2 ${isActive ? "border-y-2 border-black" : "hover:border-y-2 hover:border-black"}`
+            }
           >
             About
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/techstack"
-            className="text-sm hover:border-y-2 hover:border-black py-2"
+            className={({ isActive }) =>
+              `text-sm py-2 ${isActive ? "border-y-2 border-black" : "hover:border-y-2 hover:border-black"}`
+            }
           >
             Tech Stack
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/projects"
-            className="text-sm hover:border-y-2 hover:border-black py-2"
+            className={({ isActive }) =>
+              `text-sm py-2 ${isActive ? "border-y-2 border-black" : "hover:border-y-2 hover:border-black"}`
+            }
           >
             Projects
-          </Link>
-          <Link
-            to="/experience"
-            className="text-sm hover:border-y-2 hover:border-black py-2"
-          >
-            Experience
-          </Link>
-          <Link
+          </NavLink>
+
+          <NavLink
             to="/contact"
-            className="text-sm hover:border-y-2 hover:border-black py-2"
+            className={({ isActive }) =>
+              `text-sm py-2 ${isActive ? "border-y-2 border-black" : "hover:border-y-2 hover:border-black"}`
+            }
           >
             Contact
-          </Link>
+          </NavLink>
         </li>
       </ul>
 
@@ -88,8 +91,9 @@ function Navbar() {
       <div
         className={open ? "overlay" : "overlay active"}
         onClick={handleClick}
+        role="button"
       >
-        <Hamburger />
+        <Hamburger onClose={handleClick} />
       </div>
     </nav>
   );

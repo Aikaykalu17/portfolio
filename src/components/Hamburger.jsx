@@ -1,8 +1,10 @@
+import { NavLink } from "react-router-dom";
+
 import { FaUser, FaBriefcase, FaCode, FaEnvelope } from "react-icons/fa";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
-function Hamburger() {
+function Hamburger({ onClose }) {
   function handleClick(e) {
     e.stopPropagation();
   }
@@ -11,48 +13,54 @@ function Hamburger() {
   return (
     <div
       onClick={handleClick}
+      role="button"
       className="mt-4 pt-8 border-t border-slate-600 flex flex-col justify-between gap-4"
     >
       <nav
         aria-label="Social-links"
         className="flex flex-col items-start w-[90%] mx-auto justify-between h-52 "
       >
-        <a
-          href="#about"
+        <NavLink
+          to="/about"
+          onClick={onClose}
           className="text-white flex items-center justify-center gap-4"
         >
           {" "}
           <FaUser size={30} color="#fff" /> About
-        </a>
-        <a
-          href="#techstack"
+        </NavLink>
+        <NavLink
+          to="/techstack"
+          onClick={onClose}
           className="text-white flex items-center justify-center gap-4"
         >
           {" "}
           <FaCode size={30} color="#fff" />
           Skills
-        </a>
-        <a
-          href="#projects"
+        </NavLink>
+        <NavLink
+          to="/projects"
+          onClick={onClose}
           className="text-white flex items-center justify-center gap-4"
         >
           {" "}
           <FaUser size={30} color="#fff" /> Projects
-        </a>
-        <a
-          href="#experience"
+        </NavLink>
+        <NavLink
+          to="/experience"
+          onClick={onClose}
           className="text-white flex items-center justify-center gap-4"
         >
           {" "}
           <FaBriefcase size={30} color="#fff" /> Experience
-        </a>
-        <a
-          href="#contact"
+        </NavLink>
+        <NavLink
+          to="/contact"
+          onClick={onClose}
           className="text-white flex items-center justify-center gap-4"
         >
           {" "}
           <FaEnvelope size={30} color="#fff" /> Contact
-        </a>
+        </NavLink>
       </nav>
 
       <div className="flex justify-center border-t border-slate-600 pt-6 w-[90%] h-36 mx-auto">

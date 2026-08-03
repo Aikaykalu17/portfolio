@@ -19,8 +19,10 @@ import {
   SiNextdotjs,
   SiRedux,
   SiReactquery,
+  SiFramer,
 } from "react-icons/si";
 import { FiTarget } from "react-icons/fi";
+import { NavLink } from "react-router-dom";
 
 function Hero() {
   return (
@@ -62,31 +64,49 @@ function Hero() {
           <div className="flex flex-col gap-4 py-4 w-full lg:w-full lg:pt-0 lg:pl-0">
             <p className="text-sm font-semibold text-neutral-600">TECH STACK</p>
 
-            <div className="marquee-wrapper">
-              <div className="marquee-row marquee-left">
-                <FaHtml5 title="HTML" size={32} color="#E34F26" />
-                <FaCss3Alt title="CSS" size={32} color="#1572B6" />
-                <FaJs title="JAVASCRIPT" size={32} color="#F7DF1E" />
-                <FaReact title="REACT" size={32} color="#61DAFB" />
-                <SiTailwindcss title="TAILWINDCSS" size={32} color="#06B6D4" />
-                <FaHtml5 title="HTML" size={32} color="#E34F26" />
-                <FaCss3Alt title="CSS" size={32} color="#1572B6" />
-                <FaJs title="JAVASCRIPT" size={32} color="#F7DF1E" />
-                <FaReact title="REACT" size={32} color="#61DAFB" />
-                <SiTailwindcss title="TAILWINDCSS" size={32} color="#06B6D4" />
+            <div className="flex flex-col gap-6">
+              <div className="flex gap-4">
+                <span className="flex flex-col items-center justify-center  text-stone-900 font-bold text-xs">
+                  <FaHtml5 title="HTML" size={32} color="#E34F26" /> HTML
+                </span>
+                <span className="flex flex-col items-center justify-center  text-stone-900 font-bold text-xs">
+                  <FaCss3Alt title="CSS" size={32} color="#1572B6" /> CSS
+                </span>
+                <span className="flex flex-col items-center justify-center  text-stone-900 font-bold text-xs">
+                  <SiTailwindcss
+                    title="TAILWINDCSS"
+                    size={32}
+                    color="#06B6D4"
+                  />{" "}
+                  TAILWINDCSS
+                </span>
+                <span className="flex flex-col items-center justify-center  text-stone-900 font-bold text-xs">
+                  <FaJs title="JAVASCRIPT" size={32} color="#F7DF1E" />{" "}
+                  JAVASCRIPT
+                </span>
+                <span className="flex flex-col items-center justify-center  text-stone-900 font-bold text-xs">
+                  <FaReact title="REACT" size={32} color="#61DAFB" /> REACT
+                </span>
               </div>
-            </div>
-
-            <div className="marquee-wrapper">
-              <div className="marquee-row marquee-right">
-                <FaWordpress title="WORDPRESS" size={32} color="#21759B" />
-                <SiNextdotjs title="NEXTJS" size={32} color="#000000" />
-                <SiReactquery title="REACTQUERY" size={32} color="#764ABC" />
-                <SiRedux title="REDUX" size={32} color="#FF4154" />
-                <FaWordpress title="WORDPRESS" size={32} color="#21759B" />
-                <SiNextdotjs title="NEXTJS" size={32} color="#000000" />
-                <SiReactquery title="REACTQUERY" size={32} color="#764ABC" />
-                <SiRedux title="REDUX" size={32} color="#FF4154" />
+              <div className="flex gap-4">
+                <span className="flex flex-col items-center justify-center  text-stone-900 font-bold text-xs">
+                  <SiReactquery title="REACTQUERY" size={32} color="#764ABC" />{" "}
+                  REACT QUERY
+                </span>
+                <span className="flex flex-col items-center justify-center  text-stone-900 font-bold text-xs">
+                  <FaWordpress title="WORDPRESS" size={32} color="#21759B" />{" "}
+                  WORDPRESS
+                </span>
+                <span className="flex flex-col items-center justify-center  text-stone-900 font-bold text-xs">
+                  <SiRedux title="REDUX" size={32} color="#FF4154" /> REDUX
+                </span>
+                <span className="flex flex-col items-center justify-center  text-stone-900 font-bold text-xs">
+                  <SiNextdotjs title="NEXTJS" size={32} color="#000000" /> NEXJS
+                </span>
+                <span className="flex flex-col items-center justify-center  text-stone-900 font-bold text-xs">
+                  <SiFramer title="Framer Motion" size={32} color="#000000" />{" "}
+                  FRAMER MOTION
+                </span>
               </div>
             </div>
           </div>
@@ -111,9 +131,11 @@ function Hero() {
                 create impact.
               </p>
             </div>
-            <button className="h-10 w-36 hover:bg-black hover:text-white text-black text-xs border border-black transition-colors duration-300">
-              More About Me
-            </button>
+            <NavLink to="/about">
+              <button className="h-10 w-36 hover:bg-black hover:text-white text-black text-xs border border-black transition-colors duration-300">
+                More About Me
+              </button>
+            </NavLink>
           </div>
           <div className="hidden lg:flex lg:flex-col lg:w-3/6 gap-8 justify-center items-start">
             <div className="flex gap-8">
@@ -167,7 +189,7 @@ function Hero() {
               View all projects &rarr;
             </a>
           </div>
-          <div className="flex">
+          <div className="flex gap-4">
             <a
               href="https://formatofamigliascs.com/"
               target="_blank"
