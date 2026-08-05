@@ -42,7 +42,7 @@ function Projects() {
         <div className="lg:hidden">
           <Listbox value={activeFilter} onChange={handleFilter}>
             <div className="relative w-full">
-              <Listbox.Button className="w-full border border-slate-300 rounded-lg p-2 text-left">
+              <Listbox.Button className="w-full border border-slate-400 rounded-lg p-2 text-left">
                 {activeFilter}
               </Listbox.Button>
               <Listbox.Options className="absolute mt-1 w-full bg-white border border-slate-200 rounded-lg shadow-lg z-10">

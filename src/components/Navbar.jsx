@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import darkLogo from "../assets/darkLogo.svg";
@@ -10,6 +10,17 @@ import { FaWhatsapp } from "react-icons/fa";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+
+  // Disables homepage scrolling whenever open is true
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    document.documentElement.style.overflow = open ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    };
+  }, [open]);
 
   function handleClick() {
     setOpen((open) => !open);
@@ -98,8 +109,9 @@ function Navbar() {
       </div>
       <div
         className={open ? "overlay" : "overlay active"}
-        onClick={handleClick}
-        role="button"
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
       >
         <Hamburger onClose={handleClick} />
       </div>

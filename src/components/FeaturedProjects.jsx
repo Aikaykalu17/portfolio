@@ -10,9 +10,9 @@ function FeaturedProjects() {
         <span className="text-sm font-semibold text-neutral-600 ">
           FEATURED PROJECTS
         </span>
-        <div className="flex items-center justify-center gap-4">
+        <div className="flex items-center justify-center gap-2">
           <h2 className="font-semibold">Some Things I've Built</h2>
-          <Link to="/projects" className="underline">
+          <Link to="/projects" className="underline text-xs">
             View all projects &rarr;
           </Link>
         </div>

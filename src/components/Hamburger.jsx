@@ -14,7 +14,7 @@ function Hamburger({ onClose }) {
     <div
       onClick={handleClick}
       role="button"
-      className="mt-4 pt-8 border-t border-slate-600 flex flex-col justify-between gap-4"
+      className="mt-4 pt-4 border-t border-slate-600 flex flex-col justify-between gap-4"
     >
       <nav
         aria-label="Social-links"
@@ -23,48 +23,48 @@ function Hamburger({ onClose }) {
         <NavLink
           to="/about"
           onClick={onClose}
-          className="text-white flex items-center justify-center gap-4"
+          className="text-white flex items-center justify-center gap-4 text-xs"
         >
           {" "}
-          <FaUser size={30} color="#fff" /> About
+          <FaUser size={20} color="#fff" /> About
         </NavLink>
         <NavLink
           to="/techstack"
           onClick={onClose}
-          className="text-white flex items-center justify-center gap-4"
+          className="text-white flex items-center justify-center gap-4 text-xs"
         >
           {" "}
-          <FaCode size={30} color="#fff" />
+          <FaCode size={20} color="#fff" />
           Skills
         </NavLink>
         <NavLink
           to="/projects"
           onClick={onClose}
-          className="text-white flex items-center justify-center gap-4"
+          className="text-white flex items-center justify-center gap-4 text-xs"
         >
           {" "}
-          <FaUser size={30} color="#fff" /> Projects
+          <FaUser size={20} color="#fff" /> Projects
         </NavLink>
         <NavLink
           to="/experience"
           onClick={onClose}
-          className="text-white flex items-center justify-center gap-4"
+          className="text-white flex items-center justify-center gap-4 text-xs"
         >
           {" "}
-          <FaBriefcase size={30} color="#fff" /> Experience
+          <FaBriefcase size={20} color="#fff" /> Experience
         </NavLink>
         <NavLink
           to="/contact"
           onClick={onClose}
-          className="text-white flex items-center justify-center gap-4"
+          className="text-white flex items-center justify-center gap-4 text-xs"
         >
           {" "}
-          <FaEnvelope size={30} color="#fff" /> Contact
+          <FaEnvelope size={20} color="#fff" /> Contact
         </NavLink>
       </nav>
 
-      <div className="flex justify-center border-t border-slate-600 pt-6 w-[90%] h-36 mx-auto">
-        <button className="w-60 h-12 border border-stone-500 text-white ">
+      <div className="flex justify-center border-t border-slate-600 pt-6 w-[90%]  mx-auto">
+        <button className="w-60 h-12 border border-stone-500 text-white text-xs">
           Let's talk
         </button>
       </div>
@@ -77,7 +77,7 @@ function Hamburger({ onClose }) {
           href="https://github.com/Aikaykalu17"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white flex items-center gap-4"
+          className="text-white flex items-center gap-4 text-xs"
         >
           {" "}
           <FaGithub size={20} color="#fff" />
@@ -87,7 +87,7 @@ function Hamburger({ onClose }) {
           href="https://www.linkedin.com/in/ikechukwu-kalu-amogu/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white flex items-center  gap-4"
+          className="text-white flex items-center  gap-4 text-xs"
         >
           <FaLinkedin size={20} color="#fff" />
           LinkedIn
@@ -96,7 +96,7 @@ function Hamburger({ onClose }) {
           href="mailto:ikegod4luv@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white flex items-center gap-4"
+          className="text-white flex items-center gap-4 text-xs"
         >
           <SiGmail size={20} color="#fff" />
           Email
