@@ -18,8 +18,8 @@ import { VscVscode } from "react-icons/vsc";
 function TechStack() {
   return (
     <section className="pt-4" id="techstack">
-      <div className="flex flex-col justify-between gap-4 w-[90%] mx-auto border-slate-200 lg:flex lg:flex-row">
-        <div className="flex flex-col gap-6 lg:flex lg:flex-row">
+      <div className="flex flex-col justify-between gap-8 pb-8 w-[90%] mx-auto border-slate-200 lg:flex lg:flex-col">
+        <div className="flex flex-col gap-6 lg:flex lg:flex-col ">
           <div className="flex flex-col gap-6">
             <p className="font-bold text-purple-700">TECH STACK</p>
             <h1 className="text-3xl font-bold">
@@ -48,9 +48,9 @@ function TechStack() {
         </div>
 
         {/* Icons part */}
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-4 lg:flex lg:flex-row lg:justify-between">
           {/* Languages */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-4">
             <div>
               <h3 className="font-bold">Languages</h3>
             </div>
@@ -61,7 +61,7 @@ function TechStack() {
               </div>
               <div className="flex flex-col  gap-1">
                 <h4 className="font-bold">JavaScript</h4>
-                <p className="text-xs">
+                <p className="text-xs text-stone-500">
                   Building interactive and dynamic experiences.
                 </p>
               </div>
@@ -73,7 +73,9 @@ function TechStack() {
               </div>
               <div className="flex flex-col gap-1">
                 <h4 className="font-bold">TypeScript</h4>
-                <p className="text-xs">Adding type safety to JavaScript.</p>
+                <p className="text-xs text-stone-500">
+                  Adding type safety to JavaScript.
+                </p>
               </div>
             </div>
 
@@ -83,7 +85,7 @@ function TechStack() {
               </div>
               <div className="flex flex-col gap-1">
                 <h4 className="font-bold">HTML5</h4>
-                <p className="text-xs">
+                <p className="text-xs text-stone-500">
                   Structuring the web with semantic markup.
                 </p>
               </div>
@@ -94,15 +96,15 @@ function TechStack() {
               </div>
               <div className="flex flex-col gap-1">
                 <h4 className="font-bold">CSS3</h4>
-                <p className="text-xs">
+                <p className="text-xs text-stone-500">
                   Styling beautiful and responsive interfces.
                 </p>
               </div>
             </div>
           </div>
-
+          <div className="hidden lg:block h-auto w-px border border-slate-200"></div>
           {/* Frameworks */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-4">
             <div>
               <h3 className="font-bold">Frameworks & Libraries</h3>
             </div>
@@ -113,7 +115,7 @@ function TechStack() {
               </div>
               <div className="flex flex-col gap-1">
                 <h4 className="font-bold">React</h4>
-                <p className="text-xs">
+                <p className="text-xs text-stone-500">
                   Building user interfaces with component-based architecture.
                 </p>
               </div>
@@ -125,7 +127,9 @@ function TechStack() {
               </div>
               <div className="flex flex-col gap-1">
                 <h4 className="font-bold">Next.js</h4>
-                <p className="text-xs">The React framework for production.</p>
+                <p className="text-xs text-stone-500">
+                  The React framework for production.
+                </p>
               </div>
             </div>
             <div className="flex flex-row gap-4 border border-slate-300 p-4 rounded-lg">
@@ -138,7 +142,9 @@ function TechStack() {
               </div>
               <div className="flex flex-col gap-1">
                 <h4 className="font-bold">Tailwind CSS</h4>
-                <p className="text-xs">Utility-first CSS framework.</p>
+                <p className="text-xs text-stone-500">
+                  Utility-first CSS framework.
+                </p>
               </div>
             </div>
             <div className="flex flex-row gap-4 border border-slate-300 p-4 rounded-lg">
@@ -146,16 +152,18 @@ function TechStack() {
                 <SiReactquery size={30} title="React Query" color="#764ABC" />
               </div>
               <div className="flex flex-col gap-1">
-                <h4>React Query</h4>
-                <p>Powerful data fetching for React applications.</p>
+                <h4 className="font-bold">React Query</h4>
+                <p className="text-xs text-stone-500">
+                  Powerful data fetching for React applications.
+                </p>
               </div>
             </div>
           </div>
-
+          <div className="hidden lg:block h-auto w-px border border-slate-200"></div>
           {/* Tools */}
-          <div>
+          <div className="flex flex-col gap-4">
             <div>
-              <h3>Tools & Others</h3>
+              <h3 className="font-bold">Tools & Others</h3>
             </div>
 
             <div className="flex flex-row gap-4 border border-slate-300 p-4 rounded-lg">
@@ -164,36 +172,42 @@ function TechStack() {
               </div>
               <div className="flex flex-col gap-1">
                 <h4 className="font-bold">Git</h4>
-                <p className="text-xs">Version control and collaboraton.</p>
+                <p className="text-xs text-stone-500">
+                  Version control and collaboraton.
+                </p>
               </div>
             </div>
-            <div lassName="flex flex-row gap-4 border border-slate-300 p-4 rounded-lg">
-              <div lassName="flex items-center border border-slate-300 p-4 rounded-lg">
+            <div className="flex flex-row gap-4 border border-slate-300 p-4 rounded-lg">
+              <div className="flex items-center border border-slate-300 p-4 rounded-lg">
                 <FaGithub size={30} title="GitHub" />
               </div>
               <div className="flex flex-col gap-1">
                 <h4 className="font-bold">Figma</h4>
-                <p className="text-xs">
+                <p className="text-xs text-stone-500">
                   Designing and prototyping user-interfaces.
                 </p>
               </div>
             </div>
-            <div className="flex flex-row">
-              <div>
-                <VscVscode />
+            <div className="flex flex-row gap-4 border border-slate-300 p-4 rounded-lg">
+              <div className="flex items-center border border-slate-300 p-4 rounded-lg">
+                <VscVscode size={30} title="Vs Code" color="#007ACC" />
               </div>
-              <div className="flex flex-col">
-                <h4>Vs Code</h4>
-                <p>My go-to code editor for building.</p>
+              <div className="flex flex-col gap-1">
+                <h4 className="font-bold">Vs Code</h4>
+                <p className="text-xs text-stone-500">
+                  My go-to code editor for building.
+                </p>
               </div>
             </div>
-            <div className="flex flex-row">
-              <div>
-                <FaFigma />
+            <div className="flex flex-row gap-4 border border-slate-300 p-4 rounded-lg">
+              <div className="flex items-center border border-slate-300 p-4 rounded-lg">
+                <FaFigma size={30} title="Figma" color="#F24E1E" />
               </div>
-              <div className="flex flex-col">
-                <h4>Figma</h4>
-                <p>Designing and prototyping user-interfaces.</p>
+              <div className="flex flex-col gap-1">
+                <h4 className="font-bold">Figma</h4>
+                <p className="text-xs text-stone-500">
+                  Designing and prototyping user-interfaces.
+                </p>
               </div>
             </div>
           </div>
