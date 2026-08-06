@@ -61,13 +61,14 @@ function Footer() {
               All rights reserved.
             </p>
           </div>
-          <div
+          <button
+            type="button"
             className="w-8 h-8 border border-white rounded-full flex items-center justify-center self-center"
             onClick={scrollToTop}
-            role="button"
+            aria-label="Scroll to top"
           >
             <FaArrowUp color="#fff" size={15} />
-          </div>
+          </button>
         </div>
       </div>
     </footer>

@@ -73,6 +73,7 @@ function Projects() {
 
         <div className="hidden  md:flex md:flex-row gap-4 border border-slate-400 w-max p-4 rounded-lg ">
           <button
+            type="button"
             onClick={() => handleFilter("All Projects")}
             className={getButtonStyle("All Projects")}
           >
@@ -80,6 +81,7 @@ function Projects() {
           </button>
           <div className="h-auto w-px bg-slate-400"></div>
           <button
+            type="button"
             onClick={() => handleFilter("Landing Pages")}
             className={getButtonStyle("Landing Pages")}
           >
@@ -87,6 +89,7 @@ function Projects() {
           </button>
           <div className="h-auto w-px bg-slate-400"></div>
           <button
+            type="button"
             onClick={() => handleFilter("Web Application")}
             className={getButtonStyle("Web Application")}
           >
@@ -94,6 +97,7 @@ function Projects() {
           </button>
           <div className="h-auto w-px bg-slate-400"></div>
           <button
+            type="button"
             onClick={() => handleFilter("Other")}
             className={getButtonStyle("Other")}
           >
@@ -127,7 +131,16 @@ function Projects() {
                 rel="noopener noreferrer"
                 className="flex flex-col items-center gap-4 underline text-xs xl:flex xl:flex-row"
               >
-                <img src={project.image} alt="" className="lg:w-3/6" />{" "}
+                <img
+                  src={project.image}
+                  alt={
+                    project.title
+                      ? `${project.title} preview`
+                      : "Project preview"
+                  }
+                  className="lg:w-3/6"
+                  loading="lazy"
+                />{" "}
                 <span className="">Visit site &rarr;</span>
               </a>
             </div>

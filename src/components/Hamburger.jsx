@@ -4,16 +4,16 @@ import { FaUser, FaBriefcase, FaCode, FaEnvelope } from "react-icons/fa";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
-function Hamburger({ onClose }) {
-  function handleClick(e) {
-    e.stopPropagation();
-  }
+function Hamburger({ onClose, isOpen }) {
   const year = new Date().getFullYear();
 
   return (
     <div
-      onClick={handleClick}
-      role="button"
+      id="mobile-menu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Main navigation"
+      aria-hidden={!isOpen}
       className="mt-4 pt-4 border-t border-slate-600 flex flex-col justify-between gap-4"
     >
       <nav
@@ -65,7 +65,10 @@ function Hamburger({ onClose }) {
       </nav>
 
       <div className="flex justify-center border-t border-slate-600 pt-6 w-[90%]  mx-auto">
-        <button className="w-60 h-12 border border-stone-500 text-white text-xs">
+        <button
+          type="button"
+          className="w-60 h-12 border border-stone-500 text-white text-xs"
+        >
           Let's talk
         </button>
       </div>

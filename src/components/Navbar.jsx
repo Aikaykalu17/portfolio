@@ -28,6 +28,7 @@ function Navbar() {
 
   const phone = "2348101375140";
   const message = "Hi! I saw your portfolio and would like to chat.";
+  const mobileMenuId = "mobile-navigation";
 
   return (
     <nav className="relative z-20 flex h-12  w-[90%] items-center justify-between  ">
@@ -98,8 +99,12 @@ function Navbar() {
 
       <div className="md:hidden">
         <button
+          type="button"
           className={open ? "hamburger open" : "hamburger"}
           onClick={handleClick}
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={open}
+          aria-controls={mobileMenuId}
         >
           <span></span>
           <span></span>
@@ -107,12 +112,14 @@ function Navbar() {
         </button>
       </div>
       <div
+        id={mobileMenuId}
         className={open ? "overlay" : "overlay active"}
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
+        aria-label="Mobile navigation menu"
       >
-        <Hamburger onClose={handleClick} />
+        <Hamburger onClose={handleClick} isOpen={open} />
       </div>
     </nav>
   );
