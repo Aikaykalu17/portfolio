@@ -35,7 +35,7 @@ function Navbar() {
         <img
           src={open ? whiteLogo : darkLogo}
           alt={open ? "white logo" : "dark logo"}
-          className="h-8 w-auto object-contain z-40"
+          className="h-6 w-auto object-contain z-40"
         />
       </div>
 
@@ -90,10 +90,9 @@ function Navbar() {
           href={`https://wa.me/${phone}?text=${encodeURIComponent(message)}`}
           target="_blank"
           rel="noopener noreferrer"
+          className="h-10 xl:w-36 md:w-32 text-white text-center bg-black text-xs hidden md:flex items-center justify-center gap-2 hover:bg-white hover:text-black md:hover:border md:hover:border-black transition-colors duration-300"
         >
-          <button className="h-10 xl:w-36 md:w-28 text-white text-center bg-black text-xs hidden md:flex items-center justify-center gap-2 hover:bg-white hover:text-black md:hover:border md:hover:border-black transition-colors duration-300">
-            Let's Talk <FaWhatsapp size={15} />
-          </button>
+          Let's Talk <FaWhatsapp size={15} />
         </a>
       </div>
 

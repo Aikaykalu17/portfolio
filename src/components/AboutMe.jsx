@@ -22,10 +22,11 @@ function AboutMe() {
               create impact.
             </p>
           </div>
-          <NavLink to="/about">
-            <button className="h-10 w-36 hover:bg-black hover:text-white text-black text-xs border border-black transition-colors duration-300">
-              More About Me
-            </button>
+          <NavLink
+            to="/about"
+            className="h-10 w-36 flex items-center justify-center hover:bg-black hover:text-white text-black text-xs border border-black transition-colors duration-300"
+          >
+            More About Me
           </NavLink>
         </div>
         <div className="hidden lg:flex lg:flex-col lg:w-3/6 gap-4 justify-center items-center">

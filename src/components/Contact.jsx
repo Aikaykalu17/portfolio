@@ -108,11 +108,9 @@ function Contact() {
               href={`https://wa.me/${phone}?text=${encodeURIComponent(message)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full"
+              className="inline-flex w-full h-10  bg-black text-white items-center justify-center text-xs rounded-lg gap-2 lg:h-10 lg:w-36"
             >
-              <button className="h-10 w-full bg-black text-white flex items-center justify-center text-xs rounded-lg gap-2 lg:h-10 lg:w-36">
-                Let's Talk <HiOutlineArrowUpRight title="Arrow Right" />
-              </button>
+              Let's Talk <HiOutlineArrowUpRight title="Arrow Right" />
             </a>
           </div>
         </div>

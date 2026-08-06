@@ -17,8 +17,8 @@ function Projects() {
 
   function getButtonStyle(category) {
     return activeFilter === category
-      ? "h-8 w-36 text-white text-center bg-black text-xs items-center justify-center gap-2 rounded text-xs"
-      : "h-8 w-36  border border-black text-black rounded text-xs";
+      ? "h-8 w-32 text-white text-center bg-black text-xs items-center justify-center gap-2 rounded text-xs"
+      : "h-8 w-32  border border-black text-black rounded text-xs";
   }
 
   return (
@@ -40,7 +40,7 @@ function Projects() {
         <div className="md:hidden">
           <Listbox value={activeFilter} onChange={handleFilter}>
             <div className="relative w-full">
-              <Listbox.Button className="w-full border border-slate-400 rounded-lg p-2 text-left">
+              <Listbox.Button className="w-full border border-slate-400 rounded-lg p-2 text-left text-xs">
                 {activeFilter}
               </Listbox.Button>
               <Listbox.Options className="absolute mt-1 w-full bg-white border border-slate-200 rounded-lg shadow-lg z-10">
@@ -53,7 +53,7 @@ function Projects() {
                   <Listbox.Option
                     key={category}
                     value={category}
-                    className="p-2 cursor-pointer hover:bg-slate-100"
+                    className="p-2 cursor-pointer hover:bg-slate-100 text-xs"
                   >
                     {category}
                   </Listbox.Option>
@@ -92,7 +92,7 @@ function Projects() {
             Other
           </button>
         </div>
-        <div className="xl:grid xl:grid-cols-3 flex flex-col gap-8">
+        <div className="md:grid md:grid-cols-3 flex flex-col gap-8 md:gap-4">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
@@ -117,10 +117,10 @@ function Projects() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-row items-center gap-4 underline text-xs"
+                className="flex flex-col items-center gap-4 underline text-xs xl:flex xl:flex-row"
               >
-                <img src={project.image} alt="" className="lg:w-3/6" /> Visit
-                site &rarr;
+                <img src={project.image} alt="" className="lg:w-3/6" />{" "}
+                <span className="">Visit site &rarr;</span>
               </a>
             </div>
           ))}

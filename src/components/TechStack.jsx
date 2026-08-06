@@ -182,7 +182,7 @@ function TechStack() {
                 <FaGithub size={30} title="GitHub" />
               </div>
               <div className="flex flex-col gap-1">
-                <h4 className="font-bold">Figma</h4>
+                <h4 className="font-bold">GitHub</h4>
                 <p className="text-xs text-stone-500">
                   Designing and prototyping user-interfaces.
                 </p>
