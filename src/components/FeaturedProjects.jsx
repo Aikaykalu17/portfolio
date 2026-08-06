@@ -1,5 +1,5 @@
 import famiglia from "../assets/famiglia.webp";
-import manageLanding from "../assets/manageLanding.webp";
+import manageLanding from "../assets/ManageLanding.webp";
 import fastReactPizza from "../assets/fastReactPizza.webp";
 import { Link } from "react-router-dom";
 

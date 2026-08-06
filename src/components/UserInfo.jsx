@@ -1,4 +1,4 @@
-import Typewriter from "./TyperWriter";
+import Typewriter from "./Typerwriter";
 
 import portrait2 from "../assets/portrait2.webp";
 

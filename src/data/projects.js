@@ -1,5 +1,5 @@
 import famiglia from "../assets/famiglia.webp";
-import manageLanding from "../assets/manageLanding.webp";
+import manageLanding from "../assets/ManageLanding.webp";
 import fastReactPizza from "../assets/fastReactPizza.webp";
 import productCart from "../assets/productCart.webp";
 import weatherMockup from "../assets/weatherMockup.webp";
