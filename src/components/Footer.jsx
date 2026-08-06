@@ -29,9 +29,10 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="text-white flex items-center font-medium text-xs gap-4"
+            aria-label="Visit my GitHub profile"
           >
             {" "}
-            <FaGithub size={20} color="#fff" />{" "}
+            <FaGithub size={20} color="#fff" title="Github" />{" "}
             <span className="hidden sm:inline">GitHub</span>
           </a>
           <a
@@ -39,8 +40,9 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="text-white flex items-center font-medium text-xs gap-4"
+            aria-label="Visit my LinkedIn profile"
           >
-            <FaLinkedin size={20} color="#fff" />{" "}
+            <FaLinkedin size={20} color="#fff" title="LinkedIn" />{" "}
             <span className="hidden sm:inline">LinkedIn</span>
           </a>
           <a
@@ -48,8 +50,9 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="text-white flex items-center font-medium text-xs gap-4"
+            aria-label="Send me an email"
           >
-            <SiGmail size={20} color="#fff" />{" "}
+            <SiGmail size={20} color="#fff" title="Email" />{" "}
             <span className="hidden sm:inline">Email</span>
           </a>
         </nav>

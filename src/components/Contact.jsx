@@ -10,8 +10,8 @@ function Contact() {
   const message = "Hi! I saw your portfolio and would like to chat.";
 
   return (
-    <section className="pt-4 md:h-dvh" id="contact">
-      <div className="flex flex-col w-[90%] mx-auto border-t py-4 gap-4 md:h-full md:justify-between">
+    <section className="pt-4 md:h-full" id="contact">
+      <div className="flex flex-col w-[90%] mx-auto border-t py-4 gap-4 md:h-full md:justify-between xl:h-dvh">
         <div className="flex flex-col justify-between gap-4 border-slate-200 md:h-full md:justify-around xl:flex xl:flex-row xl:justify-between">
           <div className="flex flex-col gap-6">
             <p className="font-bold text-purple-700">LETS CONNECT</p>
@@ -108,7 +108,7 @@ function Contact() {
               href={`https://wa.me/${phone}?text=${encodeURIComponent(message)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full h-10  bg-black text-white items-center justify-center text-xs rounded-lg gap-2 lg:h-10 lg:w-36"
+              className="inline-flex w-full h-10  bg-black text-white items-center justify-center text-xs rounded-lg gap-2 lg:h-10 lg:w-36 hover:bg-white hover:text-black md:hover:border md:hover:border-black transition-colors duration-300"
             >
               Let's Talk <HiOutlineArrowUpRight title="Arrow Right" />
             </a>
