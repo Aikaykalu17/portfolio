@@ -21,6 +21,14 @@ function Hamburger({ onClose }) {
         className="flex flex-col items-start w-[90%] mx-auto justify-between h-52 "
       >
         <NavLink
+          to="/"
+          onClick={onClose}
+          className="text-white flex items-center justify-center gap-4 text-xs"
+        >
+          {" "}
+          <FaBriefcase size={20} color="#fff" /> Home
+        </NavLink>
+        <NavLink
           to="/about"
           onClick={onClose}
           className="text-white flex items-center justify-center gap-4 text-xs"
@@ -45,14 +53,7 @@ function Hamburger({ onClose }) {
           {" "}
           <FaUser size={20} color="#fff" /> Projects
         </NavLink>
-        <NavLink
-          to="/experience"
-          onClick={onClose}
-          className="text-white flex items-center justify-center gap-4 text-xs"
-        >
-          {" "}
-          <FaBriefcase size={20} color="#fff" /> Experience
-        </NavLink>
+
         <NavLink
           to="/contact"
           onClick={onClose}

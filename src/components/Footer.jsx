@@ -10,7 +10,7 @@ function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full flex items-center justify-center h-40 bg-black">
+    <footer className="w-full flex items-center justify-center h-40 bg-black flex-none">
       <div className="w-[90%] h-40 flex flex-col justify-center gap-4 lg:flex-row lg:justify-between">
         <div className="flex flex-col justify-center items-center">
           <img src={whiteLogo} alt="White logo" className="flex self-start" />
@@ -54,7 +54,7 @@ function Footer() {
           </a>
         </nav>
 
-        <div className="flex gap-12 justify-center items-center ">
+        <div className="flex gap-12 justify-around items-center ">
           <div>
             <p className="text-neutral-400  text-xs">
               © <span>{year}</span> Ikechukwu Kalu Amogu. <br />

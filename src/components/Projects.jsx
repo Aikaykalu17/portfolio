@@ -3,8 +3,6 @@ import { Listbox } from "@headlessui/react";
 
 import { projects } from "../data/projects";
 
-import { FaExternalLinkAlt } from "react-icons/fa";
-
 function Projects() {
   const [activeFilter, setActiveFilter] = useState("All Projects");
 
@@ -29,7 +27,7 @@ function Projects() {
         <div className="flex flex-col gap-2">
           <p className="font-bold">MY WORK</p>
           <h1 className="text-3xl font-bold">Projects</h1>
-          <p className="text-stone-500 font-medium text-sm">
+          <p className="text-stone-500 font-medium text-xs">
             A selection of projects I've built. Each taught me something new and
             helped me grow as a developer.
           </p>
@@ -39,7 +37,7 @@ function Projects() {
           Filter projects by category
         </label>
 
-        <div className="lg:hidden">
+        <div className="md:hidden">
           <Listbox value={activeFilter} onChange={handleFilter}>
             <div className="relative w-full">
               <Listbox.Button className="w-full border border-slate-400 rounded-lg p-2 text-left">
@@ -65,7 +63,7 @@ function Projects() {
           </Listbox>
         </div>
 
-        <div className="hidden  lg:flex lg:flex-row gap-4 border border-slate-400 w-max p-4 rounded-lg ">
+        <div className="hidden  md:flex md:flex-row gap-4 border border-slate-400 w-max p-4 rounded-lg ">
           <button
             onClick={() => handleFilter("All Projects")}
             className={getButtonStyle("All Projects")}
@@ -94,25 +92,24 @@ function Projects() {
             Other
           </button>
         </div>
-        <div className="lg:grid lg:grid-cols-3 flex flex-col gap-8">
+        <div className="xl:grid xl:grid-cols-3 flex flex-col gap-8">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
               className="flex flex-col lg:flex lg:flex-col border border-slate-400 p-4 gap-2 rounded-lg"
             >
-              <p className="font-bold underline text-sm">
-                Project Title: {project.title}
+              <p className="text-stone-500 font-bold text-xs">
+                <span className="font-bold text-black ">Project Title:</span>{" "}
+                {project.title}
               </p>
-              <p className="text-stone-500 font-medium text-sm">
-                <span className="font-bold text-black underline">
+              <p className="text-stone-500 font-medium text-xs">
+                <span className="font-bold text-black ">
                   Project Description:
                 </span>{" "}
                 {project.description}
               </p>
-              <p className="text-sm">
-                <span className="font-bold text-black underline">
-                  Project Category:
-                </span>{" "}
+              <p className="text-stone-500 text-xs">
+                <span className="font-bold text-black ">Project Category:</span>{" "}
                 {project.category}
               </p>
 
@@ -120,10 +117,10 @@ function Projects() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-row items-center gap-4"
+                className="flex flex-row items-center gap-4 underline text-xs"
               >
-                <img src={project.image} alt="" className="lg:w-3/6" />{" "}
-                <FaExternalLinkAlt />
+                <img src={project.image} alt="" className="lg:w-3/6" /> Visit
+                site &rarr;
               </a>
             </div>
           ))}

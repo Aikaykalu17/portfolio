@@ -19,7 +19,7 @@ function About() {
   return (
     <section className="pt-4" id="about">
       <div className="flex flex-col gap-4 w-[90%] mx-auto pb-4 border-t border-slate-200">
-        <div className="flex flex-col lg:flex lg:flex-row pt-4 gap-4">
+        <div className="flex flex-col md:flex md:flex-row pt-8 gap-4">
           <div className="flex flex-col gap-4 pt-4 lg:justify-center">
             <p className="font-bold">About me</p>
             <h1 className="text-3xl font-bold">
@@ -27,13 +27,13 @@ function About() {
               I build things for the web.{" "}
             </h1>
             <div className="w-24 h-px bg-black"></div>
-            <p className="text-stone-500 font-medium text-sm">
+            <p className="text-stone-500 font-medium text-xs">
               I'm a self-taught fronted developer who loves crafitng clean,
               responsive and accessible web experiences that solve real
               problems.{" "}
             </p>
             <div className="flex justify-around lg:justify-normal lg:gap-6">
-              <span className="flex items-center justify-center gap-2 text-stone-500 font-medium text-sm">
+              <span className="flex items-center justify-center gap-2 text-stone-500 font-medium text-xs">
                 <HiOutlineLocationMarker /> Nigeria
               </span>
               <div className="w-px h-4 bg-neutral-300"></div>
@@ -42,15 +42,15 @@ function About() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full w-2 h-2 bg-green-500"></span>
                 </span>
-                <span className="text-stone-500 font-medium text-sm">
+                <span className="text-stone-500 font-medium text-xs">
                   Available for work
                 </span>
               </div>
             </div>
           </div>
 
-          <div className="lg:flex lg:justify-center">
-            <img src={portrait2} className="lg:w-1/2" />
+          <div className="md:flex md:justify-center">
+            <img src={portrait2} className="md:w-8/12 xl:w-[50%]" />
           </div>
         </div>
 
@@ -70,9 +70,9 @@ function About() {
                 </div>
                 {/* Words */}
                 <div className="flex flex-col gap-2">
-                  <h2 className="font-bold">Curiosity</h2>
-                  <p className="text-stone-500 font-medium text-sm">
-                    My interest in computers stated young. I was always taking
+                  <h2 className="font-bold text-sm">Curiosity</h2>
+                  <p className="text-stone-500 font-medium text-xs">
+                    My interest in computers started young. I was always taking
                     things apart, putting them back together, chasing an answer
                     to "how does this actually work?"
                   </p>
@@ -85,8 +85,8 @@ function About() {
                 </div>
                 {/* Words */}
                 <div className="flex flex-col gap-2">
-                  <h2 className="font-bold">The Spark</h2>
-                  <p className="text-stone-500 font-medium text-sm">
+                  <h2 className="font-bold text-sm">The Spark</h2>
+                  <p className="text-stone-500 font-medium text-xs">
                     That curiosity sat dormant for a while until a friend
                     introduced me to the Mimo learning app, and something
                     clicked. What started as casual curiosity turned into a
@@ -103,8 +103,8 @@ function About() {
                 </div>
                 {/* Words */}
                 <div className="flex flex-col gap-2">
-                  <h2 className="font-bold">What I Do</h2>
-                  <p className="text-stone-500 font-medium text-sm">
+                  <h2 className="font-bold text-sm">What I Do</h2>
+                  <p className="text-stone-500 font-medium text-xs">
                     I work primarily with React, Next.js, Redux, React Query,
                     Tailwind CSS, WordPress, and vanilla HTML/CSS, comfortable
                     across both building custom applications and crafting clean,
@@ -126,8 +126,8 @@ function About() {
                 </div>
                 {/* Words */}
                 <div className="flex flex-col gap-2">
-                  <h2 className="font-bold">My Appprach</h2>
-                  <p className="text-stone-500 font-medium text-sm">
+                  <h2 className="font-bold text-sm">My Appprach</h2>
+                  <p className="text-stone-500 font-medium text-xs">
                     My approach starts before I write a single line of code. I
                     take time to understand the problem a client actually has,
                     plan the architecture of the solution, then build with
@@ -143,8 +143,8 @@ function About() {
                 </div>
                 {/* Words */}
                 <div className="flex flex-col gap-2">
-                  <h2 className="font-bold">Always Learning</h2>
-                  <p className="text-stone-600 font-medium text-sm">
+                  <h2 className="font-bold text-sm">Always Learning</h2>
+                  <p className="text-stone-600 font-medium text-xs">
                     I care about screen reader users having as smooth an
                     experience as everyone else. When a project calls for
                     something outside my current toolkit, I treat that as a
@@ -161,8 +161,8 @@ function About() {
                 </div>
                 {/* Words */}
                 <div className="flex flex-col gap-2">
-                  <h2 className="font-bold">What I Do</h2>
-                  <p className="text-stone-600 font-medium text-sm">
+                  <h2 className="font-bold text-sm">What I Do</h2>
+                  <p className="text-stone-600 font-medium text-xs">
                     I graduated with a degree in Sociology from Abia State
                     University, Uturu, and I'm a self-taught frontend developer,
                     largely shaped by Jonas Schmedtmann's courses, which built
@@ -177,8 +177,8 @@ function About() {
                 </div>
                 {/* Words */}
                 <div className="flex flex-col gap-2">
-                  <h2 className="font-bold">What I'm Doing Now</h2>
-                  <p className="text-stone-600 font-medium text-sm">
+                  <h2 className="font-bold text-sm">What I'm Doing Now</h2>
+                  <p className="text-stone-600 font-medium text-xs">
                     I currently manage the WordPress website for Formato
                     Famiglia, an Italian-based nonprofit, handling ongoing
                     maintenance, updates, and design improvements. I love making
@@ -197,13 +197,13 @@ function About() {
           </div>
 
           {/* Column on mobile devices. Row on large screens */}
-          <div className="flex flex-col gap-4 lg:flex lg:flex-row">
+          <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:flex lg:flex-row">
             <div className="flex gap-4 border border-slate-200 p-4 lg:p-2 lg:gap-2">
               <div className=" bg-slate-200 w-max h-max rounded-full p-2">
                 <HiOutlineUser size={20} />
               </div>
-              <div className="flex flex-col">
-                <h2 className="font-bold">User First</h2>
+              <div className="flex flex-col gap-1">
+                <h2 className="font-bold text-sm">User First</h2>
                 <p className="text-stone-500 font-medium text-xs">
                   I design and build with the end user in mind, creating
                   experiences that are intuitive and inclusive.
@@ -215,8 +215,8 @@ function About() {
               <div className=" bg-slate-200 w-max h-max rounded-full p-2">
                 <HiOutlineEye size={20} />
               </div>
-              <div className="flex flex-col">
-                <p className="font-bold">Accessibility</p>
+              <div className="flex flex-col gap-1">
+                <h3 className="font-bold text-sm">Accessibility</h3>
                 <p className="text-stone-500 font-medium text-xs">
                   Everyone should have a seamless experience. I build accessible
                   interfaces from ground up.
@@ -228,8 +228,8 @@ function About() {
               <div className=" bg-slate-200 w-max h-max rounded-full p-2">
                 <HiOutlineCodeBracket size={20} />
               </div>
-              <div className="flex flex-col">
-                <h2 className="font-bold">Clean Code</h2>
+              <div className="flex flex-col gap-1">
+                <h2 className="font-bold text-sm">Clean Code</h2>
                 <p className="text-stone-500 font-medium text-xs">
                   Readable, maintainable code is the foundation of every great
                   product.{" "}
@@ -241,8 +241,8 @@ function About() {
               <div className=" bg-slate-200 w-max h-max rounded-full p-2">
                 <HiOutlineBolt size={20} />
               </div>
-              <div className="flex flex-col">
-                <p className="font-bold">Continuous Growth</p>
+              <div className="flex flex-col gap-1">
+                <p className="font-bold text-sm">Continuous Growth</p>
                 <p className="text-stone-500 font-medium text-xs">
                   I embrace new tools, learn constantly, and strive to be better
                   everyday.

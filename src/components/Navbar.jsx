@@ -11,7 +11,7 @@ import { FaWhatsapp } from "react-icons/fa";
 function Navbar() {
   const [open, setOpen] = useState(false);
 
-  // Disables homepage scrolling whenever open is true
+  // Disables homepage scrolling whenever open is true.
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     document.documentElement.style.overflow = open ? "hidden" : "";
@@ -39,12 +39,12 @@ function Navbar() {
         />
       </div>
 
-      <ul className="hidden lg:block">
-        <li className="flex items-center justify-center gap-8">
+      <ul className="hidden md:block">
+        <li className="flex items-center justify-center md:gap-4 xl:gap-8">
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `text-sm py-2 ${isActive ? "border-y-2 border-black" : "hover:border-y-2 hover:border-black"}`
+              `text-sm py-1 ${isActive ? "border-y-2 border-black" : "hover:border-y-2 hover:border-black"}`
             }
           >
             Home
@@ -52,7 +52,7 @@ function Navbar() {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              `text-sm py-2 ${isActive ? "border-y-2 border-black" : "hover:border-y-2 hover:border-black"}`
+              `text-sm py-1 ${isActive ? "border-y-2 border-black" : "hover:border-y-2 hover:border-black"}`
             }
           >
             About
@@ -60,7 +60,7 @@ function Navbar() {
           <NavLink
             to="/techstack"
             className={({ isActive }) =>
-              `text-sm py-2 ${isActive ? "border-y-2 border-black" : "hover:border-y-2 hover:border-black"}`
+              `text-sm py-1 ${isActive ? "border-y-2 border-black" : "hover:border-y-2 hover:border-black"}`
             }
           >
             Tech Stack
@@ -68,7 +68,7 @@ function Navbar() {
           <NavLink
             to="/projects"
             className={({ isActive }) =>
-              `text-sm py-2 ${isActive ? "border-y-2 border-black" : "hover:border-y-2 hover:border-black"}`
+              `text-sm py-1 ${isActive ? "border-y-2 border-black" : "hover:border-y-2 hover:border-black"}`
             }
           >
             Projects
@@ -77,7 +77,7 @@ function Navbar() {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              `text-sm py-2 ${isActive ? "border-y-2 border-black" : "hover:border-y-2 hover:border-black"}`
+              `text-sm py-1 ${isActive ? "border-y-2 border-black" : "hover:border-y-2 hover:border-black"}`
             }
           >
             Contact
@@ -91,13 +91,13 @@ function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="h-10 w-36 text-white text-center bg-black text-xs hidden lg:flex items-center justify-center gap-2 hover:bg-white hover:text-black lg:hover:border lg:hover:border-black transition-colors duration-300">
+          <button className="h-10 xl:w-36 md:w-28 text-white text-center bg-black text-xs hidden md:flex items-center justify-center gap-2 hover:bg-white hover:text-black md:hover:border md:hover:border-black transition-colors duration-300">
             Let's Talk <FaWhatsapp size={15} />
           </button>
         </a>
       </div>
 
-      <div className="lg:hidden">
+      <div className="md:hidden">
         <button
           className={open ? "hamburger open" : "hamburger"}
           onClick={handleClick}

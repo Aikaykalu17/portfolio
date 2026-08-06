@@ -40,7 +40,7 @@ function App() {
         )}
       </AnimatePresence>
 
-      <main className="bg-white w-[95%] mx-auto pt-4 flex flex-col gap-8 lg:w-full lg:gap-8 border-t border-[#E5E7EB]">
+      <main className="bg-white w-[95%] mx-auto pt-4 flex flex-col gap-8 md:w-full md:gap-8 border-t border-[#E5E7EB] min-h-screen">
         <div ref={targetRef}></div> {/* invisible marker */}
         <Routes>
           <Route path="/" element={<Hero />} />

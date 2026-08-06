@@ -18,27 +18,27 @@ import { VscVscode } from "react-icons/vsc";
 function TechStack() {
   return (
     <section className="pt-4" id="techstack">
-      <div className="flex flex-col justify-between gap-8 pb-8 w-[90%] mx-auto border-slate-200 lg:flex lg:flex-col">
-        <div className="flex flex-col gap-6 lg:flex lg:flex-col ">
+      <div className="flex flex-col justify-between gap-8 pb-8 w-[90%] mx-auto border-t border-slate-200 lg:flex lg:flex-col">
+        <div className="flex flex-col pt-4 gap-6 lg:flex lg:flex-col ">
           <div className="flex flex-col gap-6">
-            <p className="font-bold text-purple-700">TECH STACK</p>
+            <p className="font-bold text-black">TECH STACK</p>
             <h1 className="text-3xl font-bold">
               Technologies I use to build the web
             </h1>
-            <p className="text-stone-500 font-medium text-sm">
+            <p className="text-stone-500 font-medium text-xs">
               A collection of the technologies, tools and platforms I use to
               build fast, modern and responsive web applications.
             </p>
           </div>
 
           <div className="flex flex-row gap-6">
-            <div className="flex border-l-2 border-purple-600"></div>
+            <div className="flex border-l-2 border-black"></div>
             <div className="flex flex-col justify-around">
               <h2 className="">
                 The right tools make the process smoother
                 <br /> and the product better.
               </h2>
-              <p className="text-stone-500 font-medium text-sm">
+              <p className="text-stone-500 font-medium text-xs">
                 I choose the technologies that help me build scalable,
                 maintainable, and user-friendly solutions.
               </p>

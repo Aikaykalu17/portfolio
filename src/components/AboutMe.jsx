@@ -28,38 +28,38 @@ function AboutMe() {
             </button>
           </NavLink>
         </div>
-        <div className="hidden lg:flex lg:flex-col lg:w-3/6 gap-8 justify-center items-start">
-          <div className="flex gap-8">
+        <div className="hidden lg:flex lg:flex-col lg:w-3/6 gap-4 justify-center items-center">
+          <div className="flex gap-4">
             <div className="border border-black flex items-center justify-center px-4 rounded-lg h-12">
               <FiTarget size={25} />
             </div>
             <div className="flex flex-col">
               <h2 className="font-semibold">Detailed Oriented</h2>
-              <p className="text-sm text-slate-600">
+              <p className="text-xs text-slate-600">
                 I pay attention to the little thing that <br /> make a
                 difference.
               </p>
             </div>
           </div>
-          <div className="flex gap-8">
+          <div className="flex gap-4">
             <div className="border border-black flex items-center justify-center px-4 rounded-lg h-12">
               <FaPuzzlePiece size={25} />
             </div>
             <div className="flex flex-col">
               <h2 className="font-semibold">Problem Solver</h2>
-              <p className="text-sm text-slate-600">
+              <p className="text-xs text-slate-600">
                 I enjoy solving problems and building <br /> solutions that
                 matter.
               </p>
             </div>
           </div>
-          <div className="flex gap-8">
+          <div className="flex gap-4">
             <div className="border border-black flex items-center justify-center px-4 rounded-lg h-12">
               <FaBookOpen size={25} />
             </div>
             <div className="flex flex-col">
               <h2 className="font-semibold">Continuous Learning</h2>
-              <p className="text-sm text-slate-600">
+              <p className="text-xs text-slate-600">
                 I'm always learning new technologies <br /> to level up my
                 skills.
               </p>

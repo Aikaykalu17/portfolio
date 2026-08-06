@@ -10,15 +10,15 @@ function Contact() {
   const message = "Hi! I saw your portfolio and would like to chat.";
 
   return (
-    <section className="pt-4" id="contact">
-      <div className="flex flex-col w-[90%] mx-auto border-t  py-4 gap-4 ">
-        <div className="flex flex-col justify-between gap-4 border-slate-200 lg:flex lg:flex-row">
+    <section className="pt-4 md:h-dvh" id="contact">
+      <div className="flex flex-col w-[90%] mx-auto border-t py-4 gap-4 md:h-full md:justify-between">
+        <div className="flex flex-col justify-between gap-4 border-slate-200 md:h-full md:justify-around xl:flex xl:flex-row xl:justify-between">
           <div className="flex flex-col gap-6">
             <p className="font-bold text-purple-700">LETS CONNECT</p>
             <h1 className="text-3xl font-bold">
               Let's build something great together.
             </h1>
-            <p className="text-stone-500 font-medium text-sm">
+            <p className="text-stone-500 font-medium text-xs">
               I'm always open to discussing new projects, partnerships,or
               opportunities. <br /> Feel free to reach out!
             </p>
@@ -28,11 +28,11 @@ function Contact() {
 
           <div className="flex flex-col gap-4 ">
             <h2 className="font-bold">Get in touch</h2>
-            <p className="text-stone-500 font-medium text-sm">
+            <p className="text-stone-500 font-medium text-xs">
               Choose the best way to reach me. I usually reply withing 24 hours.
             </p>
             {/* Grid on large screens */}
-            <div className="flex flex-col gap-4 lg:grid lg:grid-cols-2 lg:justify-center">
+            <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:justify-center">
               <div className="border border-slate-500 p-2 rounded-lg flex gap-4 items-center lg:flex lg:flex-col lg:items-start lg:py-4">
                 <div className=" bg-slate-200 w-max h-max rounded-lg p-4">
                   <HiOutlineEnvelope size={20} title="Email" color="#6F55EF" />
@@ -98,7 +98,7 @@ function Contact() {
             <HiOutlineChatBubbleLeftRight size={50} color="#6F55EF " />
             <div className="flex flex-col">
               <h4 className="font-bold">Have a project idea?</h4>
-              <p className="text-stone-500 font-medium text-sm">
+              <p className="text-stone-500 font-medium text-xs">
                 I'd love to hear about it and how I can help.
               </p>
             </div>
