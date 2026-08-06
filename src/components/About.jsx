@@ -50,7 +50,11 @@ function About() {
           </div>
 
           <div className="md:flex md:justify-center">
-            <img src={portrait2} className="md:w-8/12 xl:w-[50%]" />
+            <img
+              src={portrait2}
+              className="md:w-8/12 xl:w-[50%]"
+              alt={portrait2}
+            />
           </div>
         </div>
 

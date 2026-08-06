@@ -184,7 +184,7 @@ function TechStack() {
               <div className="flex flex-col gap-1">
                 <h4 className="font-bold">GitHub</h4>
                 <p className="text-xs text-stone-500">
-                  Designing and prototyping user-interfaces.
+                  Hosting repositories and managing code.
                 </p>
               </div>
             </div>

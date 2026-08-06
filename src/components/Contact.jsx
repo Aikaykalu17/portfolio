@@ -29,7 +29,7 @@ function Contact() {
           <div className="flex flex-col gap-4 ">
             <h2 className="font-bold">Get in touch</h2>
             <p className="text-stone-500 font-medium text-xs">
-              Choose the best way to reach me. I usually reply withing 24 hours.
+              Choose the best way to reach me. I usually reply within 24 hours.
             </p>
             {/* Grid on large screens */}
             <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:justify-center">
@@ -40,7 +40,7 @@ function Contact() {
                 <div className="flex flex-col">
                   <h3 className="font-bold">Email</h3>
                   <p className="text-stone-500 text-[0.6rem]">
-                    Send me and Email anytime.
+                    Send me an Email anytime.
                   </p>
                   <p className="text-xs text-slate-800 font-medium">
                     ikegod4luv@gmail.com
