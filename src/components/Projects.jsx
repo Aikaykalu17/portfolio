@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Listbox } from "@headlessui/react";
 
 import { projects } from "../data/projects";
+import { FaChevronDown } from "react-icons/fa";
+import "../components/Navstyle.css";
 
 function Projects() {
   const [activeFilter, setActiveFilter] = useState("All Projects");
@@ -39,27 +41,33 @@ function Projects() {
 
         <div className="md:hidden">
           <Listbox value={activeFilter} onChange={handleFilter}>
-            <div className="relative w-full">
-              <Listbox.Button className="w-full border border-slate-400 rounded-lg p-2 text-left text-xs">
-                {activeFilter}
-              </Listbox.Button>
-              <Listbox.Options className="absolute mt-1 w-full bg-white border border-slate-200 rounded-lg shadow-lg z-10">
-                {[
-                  "All Projects",
-                  "Landing Pages",
-                  "Web Application",
-                  "Other",
-                ].map((category) => (
-                  <Listbox.Option
-                    key={category}
-                    value={category}
-                    className="p-2 cursor-pointer hover:bg-slate-100 text-xs"
-                  >
-                    {category}
-                  </Listbox.Option>
-                ))}
-              </Listbox.Options>
-            </div>
+            {({ open }) => (
+              <div className="relative w-full">
+                <Listbox.Button className="w-full border border-slate-400 rounded-lg p-2 text-left text-xs flex justify-between items-center">
+                  {activeFilter}
+                  <FaChevronDown
+                    size={12}
+                    className={`transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+                  />
+                </Listbox.Button>
+                <Listbox.Options className="absolute mt-1 w-full bg-white border border-slate-200 rounded-lg shadow-lg z-10">
+                  {[
+                    "All Projects",
+                    "Landing Pages",
+                    "Web Application",
+                    "Other",
+                  ].map((category) => (
+                    <Listbox.Option
+                      key={category}
+                      value={category}
+                      className="p-2 cursor-pointer hover:bg-slate-100 text-xs"
+                    >
+                      {category}
+                    </Listbox.Option>
+                  ))}
+                </Listbox.Options>
+              </div>
+            )}
           </Listbox>
         </div>
 
