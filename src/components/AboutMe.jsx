@@ -12,9 +12,9 @@ function AboutMe() {
             ABOUT ME
           </span>
           <p className="font-semibold text-2xl">I build things for the web</p>
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-2">
             <p className="text-xs text-slate-600">
-              I'm a frontend developer with a passion for building clean, <br />
+              I'm a frontend developer with a passion for building clean,
               responsive, and accessible websites and applications.
             </p>
             <p className="text-xs text-slate-600">
