@@ -14,7 +14,7 @@ function Contact() {
       <div className="flex flex-col w-[90%] mx-auto border-t py-4 gap-4 md:h-full md:justify-between xl:h-dvh">
         <div className="flex flex-col justify-between gap-4 border-slate-200 md:h-full md:justify-around xl:flex xl:flex-row xl:justify-between">
           <div className="flex flex-col gap-6">
-            <p className="font-bold text-purple-700">LETS CONNECT</p>
+            <p className="font-bold text-black ">LETS CONNECT</p>
             <h1 className="text-3xl font-bold">
               Let's build something great together.
             </h1>
