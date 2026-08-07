@@ -1,11 +1,20 @@
 import { NavLink } from "react-router-dom";
 
-import { FaUser, FaBriefcase, FaCode, FaEnvelope } from "react-icons/fa";
+import {
+  FaUser,
+  FaBriefcase,
+  FaCode,
+  FaEnvelope,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
 function Hamburger({ onClose, isOpen }) {
   const year = new Date().getFullYear();
+
+  const phone = "2348101375140";
+  const message = "Hi! I saw your portfolio and would like to chat.";
 
   return (
     <div
@@ -14,11 +23,11 @@ function Hamburger({ onClose, isOpen }) {
       aria-modal="true"
       aria-label="Main navigation"
       aria-hidden={!isOpen}
-      className="mt-4 pt-4 border-t border-slate-600 flex flex-col justify-between gap-4"
+      className="mt-4 pt-4 border-t border-slate-600 flex flex-col  gap-4 w-[90%] mx-auto h-[calc(100dvh-6rem)] justify-between"
     >
       <nav
         aria-label="Social-links"
-        className="flex flex-col items-start w-[90%] mx-auto justify-between h-52 "
+        className="flex flex-col items-start  justify-between h-auto gap-6 "
       >
         <NavLink
           to="/"
@@ -64,18 +73,20 @@ function Hamburger({ onClose, isOpen }) {
         </NavLink>
       </nav>
 
-      <div className="flex justify-center border-t border-slate-600 pt-6 w-[90%]  mx-auto">
-        <button
-          type="button"
-          className="w-60 h-12 border border-stone-500 text-white text-xs"
+      <div className="flex items-center justify-center border-t border-slate-600 pt-4">
+        <a
+          href={`https://wa.me/${phone}?text=${encodeURIComponent(message)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-60 h-12 border border-stone-500 text-white text-sm flex items-center justify-center gap-4"
         >
-          Let's talk
-        </button>
+          Let's Talk <FaWhatsapp size={20} />
+        </a>
       </div>
 
       <nav
         aria-label="Social-links"
-        className="flex flex-col items-start w-[90%] mx-auto justify-between h-12 pb-8 gap-4 border-t border-slate-600 pt-6"
+        className="flex flex-col items-start justify-between h-auto gap-4 border-t border-slate-600 pt-6"
       >
         <a
           href="https://github.com/Aikaykalu17"
@@ -107,7 +118,7 @@ function Hamburger({ onClose, isOpen }) {
         </a>
       </nav>
 
-      <footer className="w-[90%] mx-auto mt-20 border-t border-slate-600 pt-6">
+      <footer className="border-t border-slate-600 pt-6">
         <p className="text-neutral-400  text-xs w-max">
           © <span>{year}</span> Ikechukwu Kalu Amogu. <br /> All rights
           reserved.
