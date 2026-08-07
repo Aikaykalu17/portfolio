@@ -130,7 +130,7 @@ function About() {
                 </div>
                 {/* Words */}
                 <div className="flex flex-col gap-2">
-                  <h2 className="font-bold text-sm">My Appprach</h2>
+                  <h2 className="font-bold text-sm">My Appproach</h2>
                   <p className="text-stone-500 font-medium text-xs">
                     My approach starts before I write a single line of code. I
                     take time to understand the problem a client actually has,
