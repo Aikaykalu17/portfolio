@@ -78,7 +78,7 @@ function Hamburger({ onClose, isOpen }) {
           href={`https://wa.me/${phone}?text=${encodeURIComponent(message)}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-60 h-12 border border-stone-500 text-white text-sm flex items-center justify-center gap-4"
+          className="w-60 h-12 border border-stone-500 text-white text-xs flex items-center justify-center gap-4"
         >
           Let's Talk <FaWhatsapp size={20} />
         </a>
