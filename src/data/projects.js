@@ -4,7 +4,7 @@ import fastReactPizza from "../assets/fastReactPizza.webp";
 import productCart from "../assets/productCart.webp";
 import weatherMockup from "../assets/weatherMockup.webp";
 import ageCalculator from "../assets/ageCalculator.webp";
-import wildOasis from "../assets/wildOasis.webp";
+import eliteMockup from "../assets/eliteMockup.webp";
 
 export const projects = [
   {
@@ -19,7 +19,7 @@ export const projects = [
   {
     id: 2,
     title: "Formato Famiglia",
-    category: "Other",
+    category: "website",
     image: famiglia,
     link: "https://formatofamigliascs.com/",
     description:
@@ -69,12 +69,12 @@ export const projects = [
   },
   {
     id: 7,
-    title: "The Wild Oasis",
-    category: "Web Application",
-    image: wildOasis,
-    link: "https://the-wild-oasis-eight-gilt.vercel.app/",
+    title: "Elite FC All Stars",
+    category: "Other",
+    image: eliteMockup,
+    link: "https://elite-five-rouge.vercel.app/",
     description:
-      "WildOasis is a full-stack booking platform for cabin rentals. It allows users to browse cabins, make sure bookings, and manage their reservations. It also includes an admin dashboard for managing cabins, bookings, and users.",
-    tech: ["React", "React Query", "Supabase", "Styled Components"],
+      "A full-featured concept website for a football academy in Abuja, Nigeria — built as a self-directed project to demonstrate real-world functionality including dynamic filtering, an interactive league table, a swipeable photo/video gallery with YouTube integration, and a complete registration system with automated email notifications via Resend.",
+    tech: ["React", "Nextjs", "TailwindCSS", "Redix UI", "Framer Motion"],
   },
 ];

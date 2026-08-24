@@ -19,8 +19,8 @@ function Projects() {
 
   function getButtonStyle(category) {
     return activeFilter === category
-      ? "h-8 w-32 text-white text-center bg-black text-xs items-center justify-center gap-2 rounded text-xs"
-      : "h-8 w-32  border border-black text-black rounded text-xs";
+      ? "px-4 py-2 text-white text-center bg-black text-xs items-center justify-center gap-2 rounded text-xs"
+      : "px-4 py-2  border border-black text-black rounded text-xs";
   }
 
   return (

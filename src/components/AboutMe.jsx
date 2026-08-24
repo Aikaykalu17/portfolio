@@ -24,7 +24,7 @@ function AboutMe() {
           </div>
           <NavLink
             to="/about"
-            className="h-10 w-36 flex items-center justify-center hover:bg-black hover:text-white text-black text-xs border border-black transition-colors duration-300"
+            className="px-6 py-2.5 w-max flex items-center justify-center hover:bg-black hover:text-white text-black text-xs border border-black transition-colors duration-300"
           >
             More About Me
           </NavLink>

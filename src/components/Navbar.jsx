@@ -91,7 +91,7 @@ function Navbar() {
           href={`https://wa.me/${phone}?text=${encodeURIComponent(message)}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="h-10 xl:w-36 md:w-32 text-white text-center bg-black text-xs hidden md:flex items-center justify-center gap-2 hover:bg-white hover:text-black md:hover:border md:hover:border-black transition-colors duration-300"
+          className="px-5 py-2.5 xl:px-6 md:px-5 text-white text-center bg-black text-xs hidden md:flex items-center justify-center gap-2 hover:bg-white hover:text-black md:hover:border md:hover:border-black transition-colors duration-300"
         >
           Let's Talk <FaWhatsapp size={15} />
         </a>

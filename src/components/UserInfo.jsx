@@ -31,13 +31,13 @@ function UserInfo() {
           <div className="flex justify-between mt-4 gap-4 md:justify-normal md:w-full ">
             <Link
               to="/projects"
-              className="h-10 w-36 flex items-center justify-center bg-black text-white text-xs md:hover:bg-white md:hover:text-black md:hover:border md:hover:border-black transition-colors duration-300"
+              className="px-8 py-2.5 flex items-center justify-center bg-black text-white text-xs md:hover:bg-white md:hover:text-black md:hover:border md:hover:border-black transition-colors duration-300"
             >
               View My Work
             </Link>
             <Link
               to="/contact"
-              className="h-10 w-36 flex items-center justify-center hover:bg-black hover:text-white text-black text-xs border border-black transition-colors duration-300"
+              className="px-8 py-2.5 flex items-center justify-center hover:bg-black hover:text-white text-black text-xs border border-black transition-colors duration-300"
             >
               Contact Me
             </Link>
