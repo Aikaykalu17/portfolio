@@ -5,16 +5,17 @@ import productCart from "../assets/productCart.webp";
 import weatherMockup from "../assets/weatherMockup.webp";
 import ageCalculator from "../assets/ageCalculator.webp";
 import eliteMockup from "../assets/eliteMockup.webp";
+import goalLineTurfMockup from "../assets/goalLineTurfMockup.webp";
 
 export const projects = [
   {
     id: 1,
-    title: "Manage Landing Page",
-    category: "Landing Pages",
-    image: manageLanding,
-    link: "https://manage-landing-webpage.netlify.app/",
-    description: "A responsive marketing site for a team productivity tool.",
-    tech: ["HTML5", "CSS3", "JavaScript"],
+    title: "GoalLine Turf",
+    category: "Web Application",
+    image: goalLineTurfMockup,
+    link: "https://goal-line-self.vercel.app",
+    description: "A full-featured turf booking platform for a private football facility in Abuja, Nigeria, built as a self-directed project to demonstrate production-ready, real-world functionality. The platform features a multi-step booking flow with live availability checking, private vs. open-to-others booking conflict detection, dynamic time-based pricing, promo codes, booking validation, downloadable and shareable confirmation tickets, and a role-based admin dashboard with real-time booking statistics and management tools. It also includes automated booking lifecycle email notifications powered by Resend, secure server-side validation, and responsive interfaces optimized for desktop and mobile.",
+    tech: ["Next.js", "React", "JavaScript", "Supabase", "Tailwind CSS", "Framer Motion", "Resend", "date-fns", "Headless UI", "Radix UI", "Font Awesome", "HTML2Canvas", "jsPDF", "Vercel."],
   },
   {
     id: 2,
