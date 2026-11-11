@@ -4,10 +4,89 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("./assets/fonts/dm-sans-v17-latin-regular.woff2");
-  font-weight: 400;
+  src: url("./assets/fonts/dm-sans-v17-latin-regular.woff2") format("woff2");
+  font-weight: 100 1000;
+  font-display: swap;
 }
-body {
-  font-family: "DM Sans", sans-serif;
-  @apply bg-black;
+
+/* Design tokens (space-separated RGB so Tailwind opacity modifiers work) */
+:root {
+  --bg: 255 255 255;
+  --surface: 246 246 245;
+  --raised: 255 255 255;
+  --line: 228 228 226;
+  --ink: 10 10 10;
+  --muted: 92 92 90;
+  --inverse: 10 10 10;
+  --on-inverse: 255 255 255;
+  color-scheme: light;
+}
+.dark {
+  --bg: 10 10 10;
+  --surface: 20 20 20;
+  --raised: 28 28 28;
+  --line: 44 44 44;
+  --ink: 245 245 244;
+  --muted: 163 163 160;
+  --inverse: 245 245 244;
+  --on-inverse: 10 10 10;
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-bg font-sans text-ink antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display tracking-tight;
+  }
+  :focus-visible {
+    outline: 2px solid rgb(var(--ink));
+    outline-offset: 3px;
+  }
+  ::selection {
+    background: rgb(var(--ink));
+    color: rgb(var(--bg));
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-5 md:px-8;
+  }
+  .btn {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-6 text-sm font-medium transition duration-200 active:scale-[0.98];
+  }
+  .btn-primary {
+    @apply btn bg-inverse text-on-inverse hover:opacity-85;
+  }
+  .btn-ghost {
+    @apply btn border border-line text-ink hover:bg-surface;
+  }
+  .card {
+    @apply rounded-2xl border border-line bg-surface;
+  }
+  .chip {
+    @apply inline-flex items-center rounded-full border border-line px-3 py-1 text-xs text-muted;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

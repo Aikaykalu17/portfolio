@@ -1,47 +1,51 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 
-import useHeaderVisibility from "./hooks/useHeaderVisibility";
-
-import Header from "./components/Header";
-import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Hero from "./components/Hero";
 import About from "./components/About";
 import TechStack from "./components/TechStack";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import NotFoundPage from "./components/NotFoundPage";
 
+const TITLES = {
+  "/": "Ikechukwu Kalu Amogu — Frontend Developer",
+  "/about": "About — Ikechukwu Kalu Amogu",
+  "/techstack": "Skills — Ikechukwu Kalu Amogu",
+  "/projects": "Projects — Ikechukwu Kalu Amogu",
+  "/contact": "Contact — Ikechukwu Kalu Amogu",
+};
+
 function App() {
-  const { showHeader, targetRef } = useHeaderVisibility();
+  const { pathname } = useLocation();
+  const mainRef = useRef(null);
+  const first = useRef(true);
 
-  const location = useLocation();
+  // On route change: reset scroll, update the title and move focus for screen readers.
+  useEffect(() => {
+    document.title = TITLES[pathname] ?? "Page not found — Ikechukwu Kalu Amogu";
+    window.scrollTo({ top: 0, behavior: "instant" });
+    if (first.current) {
+      first.current = false;
+      return;
+    }
+    mainRef.current?.focus({ preventScroll: true });
+  }, [pathname]);
 
-  const isKnownRoute = [
-    "/",
-    "/about",
-    "/techstack",
-    "/projects",
-    "/contact",
-  ].includes(location.pathname);
+  const isKnownRoute = pathname in TITLES;
 
   return (
     <>
-      <AnimatePresence>
-        {showHeader && isKnownRoute && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Header />
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <main className="bg-white w-[95%] mx-auto pt-4 flex flex-col gap-8 md:w-full md:gap-8 border-t border-[#E5E7EB] min-h-screen">
-        <div ref={targetRef}></div> {/* invisible marker */}
+      <a
+        href="#main"
+        className="sr-only z-[60] rounded-full bg-inverse px-4 py-2 text-sm text-on-inverse focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+      >
+        Skip to content
+      </a>
+      <Navbar />
+      <main id="main" ref={mainRef} tabIndex={-1} className="min-h-screen pt-24 outline-none md:pt-28">
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/about" element={<About />} />

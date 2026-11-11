@@ -1,159 +1,52 @@
 import { useState } from "react";
-import {
-  ListboxOption,
-  ListboxButton,
-  Listbox,
-  ListboxOptions,
-} from "@headlessui/react";
 
-import { projects } from "../data/projects";
-import { FaChevronDown } from "react-icons/fa";
-import "../components/Navstyle.css";
+import { projects, categories } from "../data/projects";
+import PageHeader from "./PageHeader";
+import ProjectCard from "./ProjectCard";
 
 function Projects() {
-  const [activeFilter, setActiveFilter] = useState("All Projects");
+  const [active, setActive] = useState("All");
 
-  function handleFilter(category) {
-    setActiveFilter(category);
-  }
-
-  const filteredProjects =
-    activeFilter === "All Projects"
-      ? projects
-      : projects.filter((filter) => filter.category === activeFilter);
-
-  function getButtonStyle(category) {
-    return activeFilter === category
-      ? "px-4 py-2 text-white text-center bg-black text-xs items-center justify-center gap-2 rounded text-xs"
-      : "px-4 py-2  border border-black text-black rounded text-xs";
-  }
+  const visible = active === "All" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section id="projects" className="w-full pt-4">
-      <div className="flex flex-col gap-4 w-[90%] mx-auto pb-4 pt-4 border-t border-slate-200 ">
-        <div className="flex flex-col gap-2">
-          <p className="font-bold">MY WORK</p>
-          <h1 className="text-3xl font-bold">Projects</h1>
-          <p className="text-stone-500 font-medium text-xs">
-            A selection of projects I've built. Each taught me something new and
-            helped me grow as a developer.
-          </p>
-        </div>
+    <section className="container-x pb-16 pt-6 md:pb-24 md:pt-10">
+      <PageHeader title="Projects">
+        A selection of things I&rsquo;ve built. Each one taught me something new and
+        helped me grow as a developer.
+      </PageHeader>
 
-        <label htmlFor="project-filter" className="sr-only">
-          Filter projects by category
-        </label>
+      <div className="mt-8" role="group" aria-label="Filter projects by category">
+        <ul className="flex flex-wrap gap-2">
+          {categories.map((c) => {
+            const on = active === c;
+            return (
+              <li key={c}>
+                <button
+                  type="button"
+                  onClick={() => setActive(c)}
+                  aria-pressed={on}
+                  className={`min-h-11 rounded-full border px-5 text-sm font-medium transition ${
+                    on
+                      ? "border-transparent bg-inverse text-on-inverse"
+                      : "border-line text-ink hover:bg-surface"
+                  }`}
+                >
+                  {c === "All" ? "All projects" : c === "Web Application" ? "Web apps" : c === "Landing Page" ? "Landing pages" : "Websites"}
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+        <p className="sr-only" role="status" aria-live="polite">
+          Showing {visible.length} {visible.length === 1 ? "project" : "projects"}
+        </p>
+      </div>
 
-        <div className="md:hidden">
-          <Listbox value={activeFilter} onChange={handleFilter}>
-            {({ open }) => (
-              <div className="relative w-full">
-                <ListboxButton className="w-full border border-slate-400 rounded-lg p-2 text-left text-xs flex justify-between items-center">
-                  {activeFilter}
-                  <FaChevronDown
-                    size={12}
-                    className={`transition-transform duration-300 ${open ? "rotate-180" : ""}`}
-                  />
-                </ListboxButton>
-                <ListboxOptions className="absolute mt-1 w-full bg-white border border-slate-200 rounded-lg shadow-lg z-10">
-                  {[
-                    "All Projects",
-                    "Landing Pages",
-                    "Web Application",
-                    "Website",
-                  ].map((category) => (
-                    <ListboxOption
-                      key={category}
-                      value={category}
-                      className="p-2 cursor-pointer hover:bg-slate-100 text-xs"
-                    >
-                      {category}
-                    </ListboxOption>
-                  ))}
-                </ListboxOptions>
-              </div>
-            )}
-          </Listbox>
-        </div>
-
-        <div className="hidden  md:flex md:flex-row gap-4 border border-slate-400 w-max p-4 rounded-lg ">
-          <button
-            type="button"
-            onClick={() => handleFilter("All Projects")}
-            className={getButtonStyle("All Projects")}
-          >
-            All Projects
-          </button>
-          <div className="h-auto w-px bg-slate-400"></div>
-          <button
-            type="button"
-            onClick={() => handleFilter("Landing Pages")}
-            className={getButtonStyle("Landing Pages")}
-          >
-            Landing Pages
-          </button>
-          <div className="h-auto w-px bg-slate-400"></div>
-          <button
-            type="button"
-            onClick={() => handleFilter("Web Application")}
-            className={getButtonStyle("Web Application")}
-          >
-            Web Applications
-          </button>
-          <div className="h-auto w-px bg-slate-400"></div>
-          <button
-            type="button"
-            onClick={() => handleFilter("Website")}
-            className={getButtonStyle("Website")}
-          >
-            Website
-          </button>
-        </div>
-        <div className="md:grid md:grid-cols-3 flex flex-col gap-8 md:gap-4">
-          {filteredProjects.map((project) => (
-            <div
-              key={project.id}
-              className="flex flex-col lg:flex lg:flex-col border border-slate-400 p-4 gap-2 rounded-lg"
-            >
-              <p className="text-stone-500 font-bold text-xs">
-                <span className="font-bold text-black ">Project Title:</span>{" "}
-                {project.title}
-              </p>
-              <p className="text-stone-500 font-medium text-xs">
-                <span className="font-bold text-black ">
-                  Project Description:
-                </span>{" "}
-                {project.description}
-              </p>
-              <p className="text-stone-500 text-xs">
-                <span className="font-bold text-black ">Project Category:</span>{" "}
-                {project.category}
-              </p>
-              <p className="text-stone-500 text-xs">
-                <span className="font-bold text-black ">Project Stack:</span>{" "}
-                {project.tech.join(", ")}
-              </p>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-4 underline text-xs xl:flex xl:flex-row"
-              >
-                <img
-                  src={project.image}
-                  alt={
-                    project.title
-                      ? `${project.title} preview`
-                      : "Project preview"
-                  }
-                  className="lg:w-3/6"
-                  loading="lazy"
-                />{" "}
-                <span className="">Visit site &rarr;</span>
-              </a>
-            </div>
-          ))}
-        </div>
+      <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {visible.map((p) => (
+          <ProjectCard key={p.id} project={p} headingLevel="h2" />
+        ))}
       </div>
     </section>
   );

@@ -30,18 +30,18 @@ export const projects = [
       "Font Awesome",
       "HTML2Canvas",
       "jsPDF",
-      "Vercel.",
+      "Vercel",
     ],
   },
   {
     id: 2,
     title: "Formato Famiglia",
-    category: "website",
+    category: "Website",
     image: famiglia,
     link: "https://formatofamigliascs.com/",
     description:
-      "A WordPress site for an Italian social coorperative supporting migrants and families. Featuring multi-level navigation, news/resources section, and a multi-year event gallery",
-    tech: ["WordPress, CSS3"],
+      "A WordPress site for an Italian social cooperative supporting migrants and families. Featuring multi-level navigation, news/resources section, and a multi-year event gallery",
+    tech: ["WordPress", "CSS3"],
   },
   {
     id: 3,
@@ -50,7 +50,7 @@ export const projects = [
     image: fastReactPizza,
     link: "https://fast-react-pizza-gold-one.vercel.app/",
     description:
-      "An online pizza ordering app where customers browse the menu, build an order, and tract it in real time from kitchen to doorstep",
+      "An online pizza ordering app where customers browse the menu, build an order, and track it in real time from kitchen to doorstep",
     tech: ["React", "React Router", "Redux", "TailwindCSS"],
   },
   {
@@ -71,7 +71,7 @@ export const projects = [
     image: weatherMockup,
     link: "https://app-weather-now.netlify.app/",
     description:
-      "A weather-checking app with real-time search, daily/hourly forecast with customizable units (⁰C/⁰F, km/h/mph)..",
+      "A weather-checking app with real-time search, daily/hourly forecast with customizable units (°C/°F, km/h/mph).",
     tech: ["HTML5", "CSS3", "JavaScript"],
   },
   {
@@ -92,16 +92,18 @@ export const projects = [
     link: "https://elite-five-rouge.vercel.app/",
     description:
       "A full-featured concept website for a football academy in Abuja, Nigeria — built as a self-directed project to demonstrate real-world functionality including dynamic filtering, an interactive league table, a swipeable photo/video gallery with YouTube integration, and a complete registration system with automated email notifications via Resend.",
-    tech: ["React", "Nextjs", "TailwindCSS", "Redix UI", "Framer Motion"],
+    tech: ["React", "Next.js", "TailwindCSS", "Radix UI", "Framer Motion"],
   },
   {
     id: 8,
     title: "Manage Landing Page",
-    category: "Landing Pages",
+    category: "Landing Page",
     image: ManageLanding,
     link: "https://manage-landing-webpage.netlify.app/",
     description:
       "A fully responsive marketing landing page for a fictional SaaS product, built from a Frontend Mentor design challenge. The page follows a standard conversion-focused structure: a hero with headline and primary CTA, a three-part feature section explaining the product's value, a testimonial carousel for social proof, a closing call-to-action banner, and a footer with a newsletter signup. The build focuses on translating a design spec into pixel-accurate layout across breakpoints. Key pieces include a custom testimonial slider with arrow navigation and looping behaviour, a hamburger menu with an overlay for mobile, and form validation on the newsletter input that surfaces an inline error state for invalid emails.",
-    tech: ["HTML, CSS, JavaScript"],
+    tech: ["HTML", "CSS", "JavaScript"],
   },
 ];
+
+export const categories = ["All", "Web Application", "Website", "Landing Page"];

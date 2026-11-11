@@ -1,5 +1,3 @@
-import { HiOutlineLocationMarker } from "react-icons/hi";
-
 import {
   HiOutlineLightBulb,
   HiOutlineRocketLaunch,
@@ -11,252 +9,143 @@ import {
   HiOutlineUser,
   HiOutlineEye,
   HiOutlineBolt,
+  HiOutlineMapPin,
 } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 
-import portrait2 from "../assets/portrait2.webp";
+import portrait from "../assets/portrait2.webp";
+import PageHeader from "./PageHeader";
+import ResumeButton from "./ResumeButton";
+
+const story = [
+  {
+    icon: HiOutlineLightBulb,
+    title: "Curiosity",
+    text: "My interest in computers started young. I was always taking things apart, putting them back together, chasing an answer to “how does this actually work?”",
+  },
+  {
+    icon: HiOutlineRocketLaunch,
+    title: "The spark",
+    text: "That curiosity sat dormant for a while until a friend introduced me to the Mimo learning app, and something clicked. What started as casual curiosity became a genuine obsession with building things: replicating designs pixel for pixel, with thoughtful UI, clean code, and responsive layouts that work on any device.",
+  },
+  {
+    icon: HiOutlineCodeBracket,
+    title: "What I do",
+    text: "I work primarily with React, Next.js, Redux, React Query, Tailwind CSS, WordPress, and vanilla HTML and CSS. I’m comfortable building custom applications as well as clean, conversion-focused landing pages for businesses that need a strong online presence.",
+  },
+  {
+    icon: HiOutlineCursorArrowRays,
+    title: "My approach",
+    text: "It starts before I write a single line of code. I take time to understand the problem a client actually has, plan the architecture of the solution, then build with accessibility in mind from the start, not as an afterthought.",
+  },
+  {
+    icon: HiOutlineArrowPath,
+    title: "Always learning",
+    text: "I care about screen reader users having as smooth an experience as everyone else. When a project calls for something outside my current toolkit, I treat it as a research problem to solve, not a wall to stop at.",
+  },
+  {
+    icon: HiOutlineAcademicCap,
+    title: "Background",
+    text: "I graduated with a degree in Sociology from Abia State University, Uturu. I’m a self-taught frontend developer, largely shaped by Jonas Schmedtmann’s courses, which built the foundation for everything I do today.",
+  },
+  {
+    icon: HiOutlineGlobeAlt,
+    title: "Right now",
+    text: "I manage the WordPress website for Formato Famiglia, an Italian-based nonprofit, handling ongoing maintenance, updates and design improvements. I love making the web feel smooth. Let’s build something people actually enjoy using.",
+  },
+];
+
+const values = [
+  { icon: HiOutlineUser, title: "User first", text: "Intuitive, inclusive experiences designed around the person using them." },
+  { icon: HiOutlineEye, title: "Accessibility", text: "Everyone deserves a seamless experience, so I build accessible from the ground up." },
+  { icon: HiOutlineCodeBracket, title: "Clean code", text: "Readable, maintainable code is the foundation of every great product." },
+  { icon: HiOutlineBolt, title: "Continuous growth", text: "I embrace new tools, learn constantly and aim to be better every day." },
+];
 
 function About() {
   return (
-    <section className="pt-4" id="about">
-      <div className="flex flex-col gap-4 w-[90%] mx-auto pb-4 border-t border-slate-200">
-        <div className="flex flex-col md:flex md:flex-row pt-8 gap-4">
-          <div className="flex flex-col gap-4 pt-4 lg:justify-center">
-            <p className="font-bold">About me</p>
-            <h1 className="text-3xl font-bold">
-              {" "}
-              I build things for the web.{" "}
-            </h1>
-            <div className="w-24 h-px bg-black"></div>
-            <p className="text-stone-500 font-medium text-xs">
-              I'm a self-taught fronted developer who loves crafitng clean,
-              responsive and accessible web experiences that solve real
-              problems.{" "}
-            </p>
-            <div className="flex justify-around lg:justify-normal lg:gap-6">
-              <span className="flex items-center justify-center gap-2 text-stone-500 font-medium text-xs">
-                <HiOutlineLocationMarker /> Nigeria
-              </span>
-              <div className="w-px h-4 bg-neutral-300"></div>
-              <div className="flex items-center justify-center gap-2">
-                <span className="relative flex w-2 h-2 items-center justify-center">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full w-2 h-2 bg-green-500"></span>
+    <>
+      <section className="container-x pb-16 pt-6 md:pb-20 md:pt-10">
+        <div className="grid items-center gap-10 md:grid-cols-[1.2fr_0.8fr] md:gap-12 lg:gap-20">
+          <div className="order-2 md:order-1">
+            <PageHeader title="I build things for the web.">
+              I&rsquo;m a self-taught frontend developer who loves crafting clean,
+              responsive and accessible web experiences that solve real problems.
+            </PageHeader>
+            <ul className="mt-7 flex flex-wrap gap-2">
+              <li className="chip gap-1.5 py-1.5 text-sm">
+                <HiOutlineMapPin size={15} aria-hidden="true" /> Nigeria
+              </li>
+              <li className="chip gap-2 py-1.5 text-sm">
+                <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
+                Available for work
+              </li>
+            </ul>
+          </div>
+          <div className="order-1 mx-auto w-full max-w-[15rem] xs:max-w-[17rem] md:order-2 md:max-w-none">
+            <div className="rounded-full border border-line bg-surface p-2.5">
+              <div className="overflow-hidden rounded-full">
+                <img
+                  src={portrait}
+                  alt="Portrait of Ikechukwu Kalu Amogu"
+                  width="924"
+                  height="924"
+                  className="aspect-square w-full scale-[1.14] object-cover dark:brightness-90"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="story-title" className="border-y border-line bg-surface">
+        <div className="container-x py-16 md:py-20">
+          <h2 id="story-title" className="text-3xl font-bold md:text-4xl">
+            My story
+          </h2>
+          <ul className="mt-10 grid gap-4 md:grid-cols-2 md:gap-6">
+            {story.map(({ icon: Icon, title, text }) => (
+              <li key={title} className="flex gap-4 rounded-2xl border border-line bg-bg p-5 md:p-6">
+                <span
+                  aria-hidden="true"
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line bg-surface"
+                >
+                  <Icon size={20} />
                 </span>
-                <span className="text-stone-500 font-medium text-xs">
-                  Available for work
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="md:flex md:justify-center">
-            <img
-              src={portrait2}
-              className="md:w-8/12 xl:w-[50%]"
-              alt={portrait2}
-            />
-          </div>
+                <div>
+                  <h3 className="text-lg font-bold">{title}</h3>
+                  <p className="mt-1.5 leading-relaxed text-muted">{text}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
+      </section>
 
-        <div className="flex flex-col gap-4 ">
-          <div>
-            <p className="font-bold">MY STORY</p>
-          </div>
-
-          {/* Row flex container */}
-          <div className="flex flex-col gap-8 lg:flex lg:flex-row">
-            {/* First column container */}
-            <div className="flex flex-col gap-8">
-              {/* Icons and words */}
-              <div className="flex gap-4">
-                <div className=" bg-slate-200 w-max h-max rounded-full p-4">
-                  <HiOutlineLightBulb size={20} title="Light Bulb" />
-                </div>
-                {/* Words */}
-                <div className="flex flex-col gap-2">
-                  <h2 className="font-bold text-sm">Curiosity</h2>
-                  <p className="text-stone-500 font-medium text-xs">
-                    My interest in computers started young. I was always taking
-                    things apart, putting them back together, chasing an answer
-                    to "how does this actually work?"
-                  </p>
-                </div>
-              </div>
-              {/* Icons and words */}
-              <div className="flex gap-4">
-                <div className=" bg-slate-200 w-max h-max rounded-full p-4">
-                  <HiOutlineRocketLaunch size={20} title="Rocket launch" />
-                </div>
-                {/* Words */}
-                <div className="flex flex-col gap-2">
-                  <h2 className="font-bold text-sm">The Spark</h2>
-                  <p className="text-stone-500 font-medium text-xs">
-                    That curiosity sat dormant for a while until a friend
-                    introduced me to the Mimo learning app, and something
-                    clicked. What started as casual curiosity turned into a
-                    genuine obsession with building things: replicating designs
-                    pixel-for-pixel, focusing on thoughtful UI, clean code, and
-                    responsive design that works on any device.
-                  </p>
-                </div>
-              </div>
-              {/* Icons and words */}
-              <div className="flex gap-4">
-                <div className=" bg-slate-200 w-max h-max rounded-full p-4">
-                  <HiOutlineCodeBracket size={20} title="Code Bracket" />
-                </div>
-                {/* Words */}
-                <div className="flex flex-col gap-2">
-                  <h2 className="font-bold text-sm">What I Do</h2>
-                  <p className="text-stone-500 font-medium text-xs">
-                    I work primarily with React, Next.js, Redux, React Query,
-                    Tailwind CSS, WordPress, and vanilla HTML/CSS, comfortable
-                    across both building custom applications and crafting clean,
-                    conversion-focused landing pages for businesses that need a
-                    strong online presence.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="hidden w-px h-auto bg-neutral-300 lg:block"></div>
-            <div className="flex flex-col gap-8">
-              {/* Icons and words */}
-              <div className="flex gap-4">
-                <div className=" bg-slate-200 w-max h-max rounded-full p-4">
-                  <HiOutlineCursorArrowRays
-                    size={20}
-                    title="Cursor Arrow Rays"
-                  />
-                </div>
-                {/* Words */}
-                <div className="flex flex-col gap-2">
-                  <h2 className="font-bold text-sm">My Appproach</h2>
-                  <p className="text-stone-500 font-medium text-xs">
-                    My approach starts before I write a single line of code. I
-                    take time to understand the problem a client actually has,
-                    plan the architecture of the solution, then build with
-                    accessibility in mind from the start, not as an
-                    afterthought.
-                  </p>
-                </div>
-              </div>
-              {/* Icons and words */}
-              <div className="flex gap-4">
-                <div className=" bg-slate-200 w-max h-max rounded-full p-4">
-                  <HiOutlineArrowPath size={20} title="Arrow Path" />
-                </div>
-                {/* Words */}
-                <div className="flex flex-col gap-2">
-                  <h2 className="font-bold text-sm">Always Learning</h2>
-                  <p className="text-stone-600 font-medium text-xs">
-                    I care about screen reader users having as smooth an
-                    experience as everyone else. When a project calls for
-                    something outside my current toolkit, I treat that as a
-                    research problem to solve, not a wall to stop at. Staying
-                    sharp on new tools and approaches is part of the job, not
-                    extra credit.
-                  </p>
-                </div>
-              </div>
-              {/* Icons and words */}
-              <div className="flex gap-4">
-                <div className=" bg-slate-200 w-max h-max rounded-full p-4">
-                  <HiOutlineAcademicCap size={20} title="Code Bracket" />
-                </div>
-                {/* Words */}
-                <div className="flex flex-col gap-2">
-                  <h2 className="font-bold text-sm">What I Do</h2>
-                  <p className="text-stone-600 font-medium text-xs">
-                    I graduated with a degree in Sociology from Abia State
-                    University, Uturu, and I'm a self-taught frontend developer,
-                    largely shaped by Jonas Schmedtmann's courses, which built
-                    the foundation for everything I do today.
-                  </p>
-                </div>
-              </div>
-              {/* Icons and words */}
-              <div className="flex gap-4">
-                <div className=" bg-slate-200 w-max h-max rounded-full p-4">
-                  <HiOutlineGlobeAlt size={20} title="Globe" />
-                </div>
-                {/* Words */}
-                <div className="flex flex-col gap-2">
-                  <h2 className="font-bold text-sm">What I'm Doing Now</h2>
-                  <p className="text-stone-600 font-medium text-xs">
-                    I currently manage the WordPress website for Formato
-                    Famiglia, an Italian-based nonprofit, handling ongoing
-                    maintenance, updates, and design improvements. I love making
-                    the web feel smooth. Let's build something people actually
-                    enjoy using.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+      <section aria-labelledby="values-title" className="container-x py-16 md:py-20">
+        <h2 id="values-title" className="text-3xl font-bold md:text-4xl">
+          What I value
+        </h2>
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {values.map(({ icon: Icon, title, text }) => (
+            <li key={title} className="card p-6">
+              <Icon size={24} aria-hidden="true" />
+              <h3 className="mt-5 text-lg font-bold">{title}</h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-muted">{text}</p>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-12 flex flex-col gap-3 xs:flex-row">
+          <Link to="/projects" className="btn-primary min-h-12 px-7">
+            See my work
+          </Link>
+          <Link to="/contact" className="btn-ghost min-h-12 px-7">
+            Get in touch
+          </Link>
+          <ResumeButton variant="ghost" />
         </div>
-
-        <div className="flex flex-col gap-4 border-t border-slate-200 p-4">
-          <div>
-            <span className="font-bold">MY VALUES</span>
-          </div>
-
-          {/* Column on mobile devices. Row on large screens */}
-          <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:flex lg:flex-row">
-            <div className="flex gap-4 border border-slate-200 p-4 lg:p-2 lg:gap-2">
-              <div className=" bg-slate-200 w-max h-max rounded-full p-2">
-                <HiOutlineUser size={20} />
-              </div>
-              <div className="flex flex-col gap-1">
-                <h2 className="font-bold text-sm">User First</h2>
-                <p className="text-stone-500 font-medium text-xs">
-                  I design and build with the end user in mind, creating
-                  experiences that are intuitive and inclusive.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 border border-slate-200 p-4 lg:p-2 lg:gap-2">
-              <div className=" bg-slate-200 w-max h-max rounded-full p-2">
-                <HiOutlineEye size={20} />
-              </div>
-              <div className="flex flex-col gap-1">
-                <h3 className="font-bold text-sm">Accessibility</h3>
-                <p className="text-stone-500 font-medium text-xs">
-                  Everyone should have a seamless experience. I build accessible
-                  interfaces from ground up.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 border border-slate-200 p-4 lg:p-2 lg:gap-2">
-              <div className=" bg-slate-200 w-max h-max rounded-full p-2">
-                <HiOutlineCodeBracket size={20} />
-              </div>
-              <div className="flex flex-col gap-1">
-                <h2 className="font-bold text-sm">Clean Code</h2>
-                <p className="text-stone-500 font-medium text-xs">
-                  Readable, maintainable code is the foundation of every great
-                  product.{" "}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 border border-slate-200 p-4 lg:p-2 lg:gap-2">
-              <div className=" bg-slate-200 w-max h-max rounded-full p-2">
-                <HiOutlineBolt size={20} />
-              </div>
-              <div className="flex flex-col gap-1">
-                <p className="font-bold text-sm">Continuous Growth</p>
-                <p className="text-stone-500 font-medium text-xs">
-                  I embrace new tools, learn constantly, and strive to be better
-                  everyday.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 

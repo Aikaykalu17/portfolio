@@ -1,23 +1,17 @@
-import { FaTriangleExclamation } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 function NotFoundPage() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-center gap-4">
-      <FaTriangleExclamation
-        size={50}
-        title="Triangle Exclamation"
-        aria-label="Caution"
-        role="img"
-        color="ff0000"
-      />
-      <h1 className="text-4xl font-bold">404</h1>
-
-      <p className="text-slate-600">This page doesn't exist.</p>
-      <Link to="/" className="text-sm underline">
-        Go back home
+    <section className="container-x flex min-h-[70vh] flex-col items-center justify-center gap-4 text-center">
+      <p className="font-display text-7xl font-extrabold md:text-8xl">404</p>
+      <h1 className="text-2xl font-bold md:text-3xl">This page doesn&rsquo;t exist.</h1>
+      <p className="max-w-sm text-muted">
+        The link may be broken or the page may have moved.
+      </p>
+      <Link to="/" className="btn-primary mt-4 min-h-12 px-7">
+        Back to home
       </Link>
-    </div>
+    </section>
   );
 }
 

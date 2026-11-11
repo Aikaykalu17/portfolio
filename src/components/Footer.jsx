@@ -1,77 +1,98 @@
-import { FaGithub, FaLinkedin, FaArrowUp } from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
+import { NavLink } from "react-router-dom";
+import { motion, useReducedMotion } from "framer-motion";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { HiOutlineEnvelope, HiOutlineArrowUp } from "react-icons/hi2";
 
-import whiteLogo from "../assets/whiteLogo.svg";
+import { navLinks, site } from "../data/site";
+import ResumeButton from "./ResumeButton";
+
+const socialClass =
+  "flex h-11 w-11 items-center justify-center rounded-full border border-line transition duration-200 hover:-translate-y-0.5 hover:bg-surface motion-reduce:hover:translate-y-0";
 
 function Footer() {
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-  const year = new Date().getFullYear();
+  const reduce = useReducedMotion();
 
   return (
-    <footer className="w-full flex items-center justify-center h-40 bg-black flex-none">
-      <div className="w-[90%] h-40 flex flex-col justify-center gap-4 lg:flex-row lg:justify-between">
-        <div className="flex flex-col justify-center items-center">
-          <img src={whiteLogo} alt="White logo" className="flex self-start" />
-          <p className="hidden lg:block text-neutral-400 text-xs">
-            Frontend Developer crafting clean, <br /> responsive, user-friendly
-            websites and web applications.{" "}
-          </p>
+    <footer className="mt-8 border-t border-line bg-surface">
+      <div className="container-x flex flex-col gap-10 py-12 md:py-14">
+        <div className="flex flex-col gap-10 md:flex-row md:justify-between">
+          <div className="max-w-xs">
+            <p className="font-display text-xl font-extrabold">{site.shortName}</p>
+            <p className="mt-3 text-sm leading-relaxed text-muted">
+              Frontend developer crafting clean, responsive, user-friendly websites and web apps.
+            </p>
+            <ResumeButton variant="link" className="mt-4" />
+          </div>
+
+          <nav aria-label="Footer" className="md:max-w-md">
+            <p className="mb-4 text-sm font-medium text-muted">Explore</p>
+            <ul className="flex flex-wrap gap-2.5">
+              {navLinks.map((l, i) => (
+                <motion.li
+                  key={l.to}
+                  initial={reduce ? false : { opacity: 0, y: 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+                  transition={{ duration: 0.4, delay: reduce ? 0 : i * 0.07, ease: "easeOut" }}
+                >
+                  <NavLink
+                    to={l.to}
+                    end={l.to === "/"}
+                    className={({ isActive }) =>
+                      `group relative inline-flex min-h-11 items-center overflow-hidden rounded-full border px-5 text-sm font-medium transition duration-200 hover:-translate-y-0.5 motion-reduce:hover:translate-y-0 ${
+                        isActive
+                          ? "border-transparent bg-inverse text-on-inverse"
+                          : "border-line bg-bg text-ink hover:border-ink"
+                      }`
+                    }
+                  >
+                    {({ isActive }) => (
+                      <>
+                        {!isActive && (
+                          <span
+                            aria-hidden="true"
+                            className="absolute inset-0 origin-left scale-x-0 rounded-full bg-inverse transition-transform duration-300 ease-out group-hover:scale-x-100 motion-reduce:transition-none"
+                          />
+                        )}
+                        <span
+                          className={`relative transition-colors duration-300 ${
+                            isActive ? "" : "group-hover:text-on-inverse"
+                          }`}
+                        >
+                          {l.label}
+                        </span>
+                      </>
+                    )}
+                  </NavLink>
+                </motion.li>
+              ))}
+            </ul>
+          </nav>
         </div>
 
-        <nav
-          className="flex gap-6 lg:flex-col self-center"
-          aria-label="Social-links"
-        >
-          <a
-            href="https://github.com/Aikaykalu17"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white flex items-center font-medium text-xs gap-4"
-            aria-label="Visit my GitHub profile"
-          >
-            {" "}
-            <FaGithub size={20} color="#fff" title="Github" />{" "}
-            <span className="hidden sm:inline">GitHub</span>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/ikechukwu-kalu-amogu/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white flex items-center font-medium text-xs gap-4"
-            aria-label="Visit my LinkedIn profile"
-          >
-            <FaLinkedin size={20} color="#fff" title="LinkedIn" />{" "}
-            <span className="hidden sm:inline">LinkedIn</span>
-          </a>
-          <a
-            href="mailto:ikegod4luv@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white flex items-center font-medium text-xs gap-4"
-            aria-label="Send me an email"
-          >
-            <SiGmail size={20} color="#fff" title="Email" />{" "}
-            <span className="hidden sm:inline">Email</span>
-          </a>
-        </nav>
-
-        <div className="flex gap-12 justify-around items-center ">
-          <div>
-            <p className="text-neutral-400  text-xs">
-              © <span>{year}</span> Ikechukwu Kalu Amogu. <br />
-              All rights reserved.
-            </p>
+        <div className="flex flex-col gap-5 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm text-muted">
+            &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
+          </p>
+          <div className="flex items-center gap-2">
+            <a href={site.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)" className={socialClass}>
+              <FaGithub size={18} aria-hidden="true" />
+            </a>
+            <a href={site.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)" className={socialClass}>
+              <FaLinkedin size={18} aria-hidden="true" />
+            </a>
+            <a href={`mailto:${site.email}`} aria-label="Email" className={socialClass}>
+              <HiOutlineEnvelope size={20} aria-hidden="true" />
+            </a>
+            <button
+              type="button"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              aria-label="Back to top"
+              className={`${socialClass} ml-2`}
+            >
+              <HiOutlineArrowUp size={18} aria-hidden="true" />
+            </button>
           </div>
-          <button
-            type="button"
-            className="w-8 h-8 border border-white rounded-full flex items-center justify-center self-center"
-            onClick={scrollToTop}
-            aria-label="Scroll to top"
-          >
-            <FaArrowUp color="#fff" size={15} />
-          </button>
         </div>
       </div>
     </footer>
