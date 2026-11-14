@@ -4,7 +4,7 @@ import productCart from "../assets/productCart.webp";
 import weatherMockup from "../assets/weatherMockup.webp";
 import ageCalculator from "../assets/ageCalculator.webp";
 import eliteMockup from "../assets/eliteMockup.webp";
-import ManageLanding from "../assets/ManageLanding.webp";
+import forma from "../assets/forma.webp";
 import goalLineTurfMockup from "../assets/goalLineTurfMockup.webp";
 
 export const projects = [
@@ -96,12 +96,12 @@ export const projects = [
   },
   {
     id: 8,
-    title: "Manage Landing Page",
-    category: "Landing Page",
-    image: ManageLanding,
-    link: "https://manage-landing-webpage.netlify.app/",
+    title: "Forma",
+    category: "Website",
+    image: forma,
+    link: "https://forma-site-snowy.vercel.app/",
     description:
-      "A fully responsive marketing landing page for a fictional SaaS product, built from a Frontend Mentor design challenge. The page follows a standard conversion-focused structure: a hero with headline and primary CTA, a three-part feature section explaining the product's value, a testimonial carousel for social proof, a closing call-to-action banner, and a footer with a newsletter signup. The build focuses on translating a design spec into pixel-accurate layout across breakpoints. Key pieces include a custom testimonial slider with arrow navigation and looping behaviour, a hamburger menu with an overlay for mobile, and form validation on the newsletter input that surfaces an inline error state for invalid emails.",
+      "Forma is a fully responsive, multi-page marketing site for a fictional project-management SaaS, redesigned and rebranded from an earlier Frontend Mentor landing page challenge. It follows a conversion-focused structure, with a hero and primary call to action, a three-part feature section, a testimonial carousel, a closing call-to-action banner, and a footer with a newsletter signup, plus Product, Pricing, About, Careers, Community, Blog, Contact and Privacy pages that share a single header and footer. The site supports dark and light mode, following the visitor's system setting, remembering their choice and applying it before the page paints to avoid a flash. The testimonial slider is built on native CSS scroll-snap for smooth swipe and trackpad scrolling, with looping arrow buttons, dot navigation and keyboard support, and the sticky navbar includes a clickable logo and a hamburger menu that opens an accessible dropdown panel. The newsletter and contact forms validate input and show inline error messages for empty or invalid emails, while accessibility and performance get attention through semantic HTML, a skip link, visible focus styles, ARIA labels, reduced-motion support, a system font stack, inline SVG and lazy-loaded images. Built with HTML, CSS and vanilla JavaScript.",
     tech: ["HTML", "CSS", "JavaScript"],
   },
 ];
