@@ -112,7 +112,7 @@ export const projects = [
     title: "Dayform",
     category: "Web Application",
     image: dayform,
-    link: "https://day-form.vercel.app/index.html",
+    link: "https://day-form.vercel.app/",
     description:
       "Dayform is a privacy-first age and milestone app that turns a simple age calculator into a clearer picture of the time you’ve lived and the moments ahead. Enter your date of birth and Dayform shows your exact age in years, months and days, the total days, weeks and hours you’ve lived, and a countdown to your next birthday. A “This year, so far” card visualises the year as 52 weekly dots with an animated progress bar, and a cosmic season card gives a full star-sign profile with element, ruling planet, traits and pairings. A milestones page generates the age landmarks still to come and lets you add, filter and delete personal dates, with undo. Everything is calculated and saved on the user’s device, so there are no accounts, no tracking and no server. Dayform also includes a floating navigation pill and full-screen mobile menu, a Quick jump command palette (Ctrl/⌘ K), light and dark themes with no flash on load, responsive layouts, and reduced-motion support. It’s built with semantic HTML, hand-written CSS and vanilla JavaScript ES modules, with self-hosted Poppins fonts, browser local storage for persistence, and no build step or third-party runtime dependencies.",
     tech: ["HTML5", "CSS3", "JavaScript"],
