@@ -5,14 +5,39 @@ import vane from "../assets/vane.webp";
 import ageCalculator from "../assets/ageCalculator.webp";
 import eliteMockup from "../assets/eliteMockup.webp";
 import forma from "../assets/forma.webp";
-import goalLineTurfMockup from "../assets/goalLineTurfMockup.webp";
+import goalLine from "../assets/goalLine.webp";
+import matchHub from "../assets/matchHub.jpg";
 
 export const projects = [
   {
     id: 1,
+    title: "MatchHub: Post a match. Find an opponent. Share the result.",
+    category: "Web Application",
+    image: matchHub,
+    link: "https://match-hub-three.vercel.app/",
+    description:
+      "MatchHub is a football match coordination platform built to make it easier for teams to find opponents, organise games, and keep track of results. Teams can create matches with their venue, kickoff time and team details, then share them with other teams who can join using a secure access code. Once an opponent joins, the match moves from “Waiting for an opponent” to “Game On!”. After the game, either team can submit the result, with a 48-hour window for corrections. MatchHub also includes previous and saved matches, match sharing, private contact details, responsive layouts, and light/dark themes. Built with Next.js and React, the app uses Supabase and PostgreSQL for data storage, bcryptjs for secure access-code hashing, Tailwind CSS for responsive styling, and Framer Motion for interface animations.",
+    tech: [
+      "Next.js",
+
+      "React",
+
+      "Supabase / PostgreSQL",
+
+      "Tailwind CSS",
+
+      "Framer Motion",
+
+      "JavaScript",
+
+      "bcryptjs",
+    ],
+  },
+  {
+    id: 2,
     title: "GoalLine Turf",
     category: "Web Application",
-    image: goalLineTurfMockup,
+    image: goalLine,
     link: "https://goal-line-self.vercel.app",
     description:
       "A full-featured turf booking platform for a private football facility in Abuja, Nigeria, built as a self-directed project to demonstrate production-ready, real-world functionality. The platform features a multi-step booking flow with live availability checking, private vs. open-to-others booking conflict detection, dynamic time-based pricing, promo codes, booking validation, downloadable and shareable confirmation tickets, and a role-based admin dashboard with real-time booking statistics and management tools. It also includes automated booking lifecycle email notifications powered by Resend, secure server-side validation, and responsive interfaces optimized for desktop and mobile.",
@@ -34,7 +59,7 @@ export const projects = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "Formato Famiglia",
     category: "Website",
     image: famiglia,
@@ -44,7 +69,7 @@ export const projects = [
     tech: ["WordPress", "CSS3"],
   },
   {
-    id: 3,
+    id: 4,
     title: "Fast React Pizza",
     category: "Web Application",
     image: fastReactPizza,
@@ -54,7 +79,7 @@ export const projects = [
     tech: ["React", "React Router", "Redux", "TailwindCSS"],
   },
   {
-    id: 4,
+    id: 5,
     title: "Product Cart Mart",
     category: "Web Application",
     image: productCart,
@@ -65,7 +90,7 @@ export const projects = [
   },
 
   {
-    id: 5,
+    id: 6,
     title: "Vane: Weather, Hour by Hour",
     category: "Web Application",
     image: vane,
@@ -83,7 +108,7 @@ export const projects = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     title: "Age Calculator",
     category: "Web Application",
     image: ageCalculator,
@@ -93,7 +118,7 @@ export const projects = [
     tech: ["HTML5", "CSS3", "JavaScript"],
   },
   {
-    id: 7,
+    id: 8,
     title: "Elite FC All Stars",
     category: "Website",
     image: eliteMockup,
@@ -103,7 +128,7 @@ export const projects = [
     tech: ["React", "Next.js", "TailwindCSS", "Radix UI", "Framer Motion"],
   },
   {
-    id: 8,
+    id: 9,
     title: "Forma",
     category: "Website",
     image: forma,
