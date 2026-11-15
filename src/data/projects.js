@@ -1,7 +1,7 @@
 import famiglia from "../assets/famiglia.webp";
 import fastReactPizza from "../assets/fastReactPizza.webp";
 import productCart from "../assets/productCart.webp";
-import weatherMockup from "../assets/weatherMockup.webp";
+import vane from "../assets/vane.webp";
 import ageCalculator from "../assets/ageCalculator.webp";
 import eliteMockup from "../assets/eliteMockup.webp";
 import forma from "../assets/forma.webp";
@@ -66,13 +66,21 @@ export const projects = [
 
   {
     id: 5,
-    title: "Weather App",
+    title: "Vane: Weather, Hour by Hour",
     category: "Web Application",
-    image: weatherMockup,
-    link: "https://app-weather-now.netlify.app/",
+    image: vane,
+    link: "https://vane-ochre.vercel.app/",
     description:
-      "A weather-checking app with real-time search, daily/hourly forecast with customizable units (°C/°F, km/h/mph).",
-    tech: ["HTML5", "CSS3", "JavaScript"],
+      "Vane is a weather app I rebuilt from a Frontend Mentor challenge into a full product. The hero panel changes colour and animation with the conditions, from amber sun to rainy slate to a starry night. Underneath it you get an interactive hourly chart with a “best window outside” highlight, a 7-day forecast, air quality, a sun and moon card, and saved places with live temperatures. It has light, dark and auto themes, a centred floating nav pill with an animated mobile menu, search with autocomplete, and “use my location”. It is fully responsive, keyboard and screen-reader friendly, respects reduced motion, and loads instantly from cache on repeat visits. It’s built with vanilla JavaScript ES modules, hand-drawn SVG charts and icons, and the Open-Meteo API, with no frameworks, build step or API keys.",
+    tech: [
+      "HTML5",
+      "CSS3",
+      "JavaScript (ES modules)",
+      "Open-Meteo API",
+      "SVG",
+      "Accessibility",
+      "Responsive design",
+    ],
   },
   {
     id: 6,
